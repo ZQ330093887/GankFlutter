@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:GankFlutter/api/Api.dart';
 import 'package:GankFlutter/api/http.dart';
 import 'package:GankFlutter/model/DailyResponse.dart';
-
+import 'package:GankFlutter/common/Constant.dart';
 import 'DetailListView.dart';
 
 // ignore: must_be_immutable
@@ -24,6 +24,7 @@ class _DetailPageState extends State<DetailPage> {
   var listData;
   var curPage = 1;
   var listTotalSize = 0;
+  var requestError = false;
   ScrollController _controller = new ScrollController();
 
   @override
@@ -49,13 +50,16 @@ class _DetailPageState extends State<DetailPage> {
   }
 
   Widget DetailBuild(BuildContext context) {
-    return listData == null
-        ? new Center(
-            child: new CupertinoActivityIndicator(),
-          )
-        : new RefreshIndicator(
-            child: buildListViewBuilder(context, listData, _controller),
-            onRefresh: _pullToRefresh);
+//    print("==>$requestError");
+    return requestError
+        ? buildExceptionIndicator("网络请求出错了！")
+        : listData == null
+            ? new Center(
+                child: new CupertinoActivityIndicator(),
+              )
+            : new RefreshIndicator(
+                child: buildListViewBuilder(context, listData, _controller),
+                onRefresh: _pullToRefresh);
   }
 
   //网络请求
@@ -64,6 +68,7 @@ class _DetailPageState extends State<DetailPage> {
     url += widget.feedType + '/10/' + this.curPage.toString();
     print("feedListUrl: $url");
     HttpExt.get(url, (data) {
+      requestError = false;
       if (data != null) {
         CategoryResponse categoryResponse =
             CategoryResponse.fromJson(jsonDecode(data));
@@ -86,6 +91,9 @@ class _DetailPageState extends State<DetailPage> {
       }
     }, (e) {
       print("get news list error: $e");
+      setState(() {
+        requestError = true;
+      });
     });
   }
 

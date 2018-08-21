@@ -31,7 +31,7 @@ class _NewsListState extends State<HomePage> {
             default:
               if (snapshot.hasError) {
                 //get执行完成但出现异常
-                return buildExceptionIndicator(snapshot.error);
+                return buildExceptionIndicator("网络请求出错了！");
               } else {
                 //get正常执行完成
                 // 创建列表，列表数据来源于snapshot的返回值，而snapshot就是get(widget.newsType)执行完毕时的快照

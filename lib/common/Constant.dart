@@ -37,15 +37,24 @@ Widget buildExceptionIndicator(String message) {
     children: <Widget>[
       new Align(
         alignment: Alignment.center,
-        child: new Image.asset('images/empty_data.png'),
-      ),
-      new Align(
-        alignment: Alignment.center,
-        child: new Text(
-          message,
-          style: const TextStyle(color: Colors.grey),
+        child: new Column(
+          children: <Widget>[
+            new Image.asset(
+              'images/empty_data.png',
+              width: 50.0,
+              height: 50.0,
+              color: Colors.grey,
+            ),
+            new Container(
+              padding: EdgeInsets.only(top: 20.0),
+              child: new Text(
+                message,
+                style: const TextStyle(color: Colors.grey),
+              ),
+            )
+          ],
         ),
-      )
+      ),
     ],
   );
 }
@@ -56,6 +65,3 @@ Widget buildLoadingIndicator() {
     child: new CupertinoActivityIndicator(),
   );
 }
-
-
-
