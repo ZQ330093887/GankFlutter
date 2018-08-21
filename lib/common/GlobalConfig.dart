@@ -10,7 +10,7 @@ class GlobalConfig {
   ///URL链接
   static String wxGithubUrl = "https://github.com/ZQ330093887/GankWX";
   static String flutterGithubUrl =
-      "https://github.com/ZQ330093887/GankFlutterProgect";
+      "https://github.com/ZQ330093887/GankFlutter";
   static String iosGithubUrl = "https://github.com/ZQ330093887/GankIOSProgect";
   static String androidGithubUrl =
       "https://github.com/ZQ330093887/ConurbationsAndroid";

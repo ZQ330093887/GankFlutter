@@ -45,7 +45,10 @@ Widget myInfoCard(BuildContext context) {
               new Container(
                 width: (MediaQuery.of(context).size.width - 6.0) / 4,
                 child: new FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      routeWebView(context, GlobalConfig.flutterVersion,
+                          GlobalConfig.flutterGithubUrl);
+                    },
                     child: new Container(
                       height: 50.0,
                       child: new Column(
