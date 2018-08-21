@@ -9,8 +9,7 @@ class GlobalConfig {
 
   ///URL链接
   static String wxGithubUrl = "https://github.com/ZQ330093887/GankWX";
-  static String flutterGithubUrl =
-      "https://github.com/ZQ330093887/GankFlutter";
+  static String flutterGithubUrl = "https://github.com/ZQ330093887/GankFlutter";
   static String iosGithubUrl = "https://github.com/ZQ330093887/GankIOSProgect";
   static String androidGithubUrl =
       "https://github.com/ZQ330093887/ConurbationsAndroid";
@@ -33,7 +32,7 @@ class GlobalConfig {
   static String wxVersion = "小程序版";
   static String androidVersion = "Android版";
   static String iosVersion = "iOS版";
-  static String Android = "Android";
+  static String android = "Android";
   static String all = "all";
   static String iOS = "iOS";
   static String h5 = "前端";
