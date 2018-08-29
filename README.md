@@ -34,19 +34,9 @@
 -  [Flutter 完整开发实战详解(三、打包填坑篇)](https://juejin.im/entry/5b6fd5ee6fb9a009d36a4104 )
 -  [Flutter 完整开发实战详解(四、 Redux、主题、国际化)](https://juejin.im/post/5b79767ff265da435450a873 )
 
-官方的Demo及各个Widget的效果在安装了Flutter SDK之后在  Flutter SDK安装目录/flutter/examples下，可以自己一一尝试。
-
-## 待解决的问题
-
-- 键盘遮挡文本输入框
-- 只做了简单的封装，计划用MVP或者MVVM框架重构 (进行中...)
-- 封装网络层并对网络层做数据缓存
-- 注册、登录、分享功能暂未实现
-- UI界面太丑了待优化
-
 ### 第三方框架
 
-当前 Flutter SDK 版本 v0.5.8
+当前 Flutter SDK 版本 v0.5.8（这些第三方库我在项目中用到了部分，这里收集起来，共大家找起来方便）
 
 库 | 功能
 -------- | ---
@@ -70,3 +60,13 @@
 **flutter_svg**|**svg**
 **photo_view**|**图片预览**
 **flutter_slidable**|**侧滑**
+
+官方的Demo及各个Widget的效果在安装了Flutter SDK之后在  Flutter SDK安装目录/flutter/examples下，可以自己一一尝试。
+
+## 待解决的问题
+
+- 键盘遮挡文本输入框
+- 只做了简单的封装，计划用MVP或者MVVM框架重构 (进行中...)
+- 封装网络层并对网络层做数据缓存
+- 注册、登录、分享功能暂未实现
+- UI界面太丑了待优化
