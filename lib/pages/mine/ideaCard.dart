@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:GankFlutter/common/GlobalConfig.dart';
+import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/utils/PageRouteUtils.dart';
 
-Widget ideaCard(BuildContext context) {
+Widget ideaCard(BuildContext context, var results) {
   return new Container(
       color: GlobalConfig.cardBackgroundColor,
       margin: const EdgeInsets.only(top: 6.0, bottom: 6.0),
@@ -15,7 +17,7 @@ Widget ideaCard(BuildContext context) {
                   new Container(
                     child: new CircleAvatar(
                       radius: 20.0,
-                      child: new Icon(Icons.all_inclusive, color: Colors.white),
+                      child: new Icon(Icons.videocam, color: Colors.white),
                       backgroundColor: Colors.blue,
                     ),
                   ),
@@ -23,16 +25,18 @@ Widget ideaCard(BuildContext context) {
                     child: new Container(
                       margin: const EdgeInsets.only(left: 8.0),
                       child: new Text(
-                        "想法",
+                        "休息视频",
                         style: new TextStyle(fontSize: 18.0),
                       ),
                     ),
                   ),
                   new Container(
                     child: new FlatButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          routePageBuilder(context, GlobalConfig.video);
+                        },
                         child: new Text(
-                          "去往想法首页",
+                          "更多",
                           style: new TextStyle(color: Colors.blue),
                         )),
                   )
@@ -49,7 +53,7 @@ Widget ideaCard(BuildContext context) {
                       decoration: new BoxDecoration(
                           color: GlobalConfig.searchBackgroundColor,
                           borderRadius:
-                              new BorderRadius.all(new Radius.circular(6.0))),
+                          new BorderRadius.all(new Radius.circular(6.0))),
                       child: new Row(
                         children: <Widget>[
                           new Container(
@@ -60,9 +64,13 @@ Widget ideaCard(BuildContext context) {
                                   alignment: Alignment.centerLeft,
                                   child: new Container(
                                     child: new Text(
-                                      "苹果 WWDC 2018 正在举行",
+                                      results != null
+                                          ? PostData
+                                          .fromJson(results[0])
+                                          .desc
+                                          :"苹果 WWDC 2018 正在举行",
                                       style: new TextStyle(
-                                          color: Colors.black, fontSize: 16.0),
+                                          color: Colors.black, fontSize: 12.0),
                                     ),
                                   ),
                                 ),
@@ -81,7 +89,10 @@ Widget ideaCard(BuildContext context) {
                           ),
                           new Container(
                               margin: const EdgeInsets.all(10.0),
-                              width: MediaQuery.of(context).size.width / 5,
+                              width: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .width / 5,
                               child: new AspectRatio(
                                   aspectRatio: 1.0 / 1.0,
                                   child: new Container(
@@ -102,7 +113,7 @@ Widget ideaCard(BuildContext context) {
                       decoration: new BoxDecoration(
                           color: GlobalConfig.searchBackgroundColor,
                           borderRadius:
-                              new BorderRadius.all(new Radius.circular(6.0))),
+                          new BorderRadius.all(new Radius.circular(6.0))),
                       child: new Row(
                         children: <Widget>[
                           new Container(
@@ -113,9 +124,13 @@ Widget ideaCard(BuildContext context) {
                                   alignment: Alignment.centerLeft,
                                   child: new Container(
                                     child: new Text(
-                                      "此刻你的桌子是什么样子？",
+                                      results != null
+                                          ? PostData
+                                          .fromJson(results[1])
+                                          .desc
+                                          :"此刻你的桌子是什么样子？",
                                       style: new TextStyle(
-                                          color: Colors.black, fontSize: 16.0),
+                                          color: Colors.black, fontSize: 12.0),
                                     ),
                                   ),
                                 ),
@@ -134,7 +149,10 @@ Widget ideaCard(BuildContext context) {
                           ),
                           new Container(
                               margin: const EdgeInsets.all(10.0),
-                              width: MediaQuery.of(context).size.width / 5,
+                              width: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .width / 5,
                               child: new AspectRatio(
                                   aspectRatio: 1.0 / 1.0,
                                   child: new Container(
@@ -155,7 +173,7 @@ Widget ideaCard(BuildContext context) {
                       decoration: new BoxDecoration(
                           color: GlobalConfig.searchBackgroundColor,
                           borderRadius:
-                              new BorderRadius.all(new Radius.circular(6.0))),
+                          new BorderRadius.all(new Radius.circular(6.0))),
                       child: new Row(
                         children: <Widget>[
                           new Container(
@@ -166,9 +184,13 @@ Widget ideaCard(BuildContext context) {
                                   alignment: Alignment.centerLeft,
                                   child: new Container(
                                     child: new Text(
-                                      "关于高考你印象最深的是...",
+                                      results != null
+                                          ? PostData
+                                          .fromJson(results[2])
+                                          .desc
+                                          :"关于高考你印象最深的是...",
                                       style: new TextStyle(
-                                          color: Colors.black, fontSize: 16.0),
+                                          color: Colors.black, fontSize: 12.0),
                                     ),
                                   ),
                                 ),
@@ -187,7 +209,10 @@ Widget ideaCard(BuildContext context) {
                           ),
                           new Container(
                               margin: const EdgeInsets.all(10.0),
-                              width: MediaQuery.of(context).size.width / 5,
+                              width: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .width / 5,
                               child: new AspectRatio(
                                   aspectRatio: 1.0 / 1.0,
                                   child: new Container(
@@ -208,7 +233,7 @@ Widget ideaCard(BuildContext context) {
                       decoration: new BoxDecoration(
                           color: GlobalConfig.searchBackgroundColor,
                           borderRadius:
-                              new BorderRadius.all(new Radius.circular(6.0))),
+                          new BorderRadius.all(new Radius.circular(6.0))),
                       child: new Row(
                         children: <Widget>[
                           new Container(
@@ -219,9 +244,13 @@ Widget ideaCard(BuildContext context) {
                                   alignment: Alignment.centerLeft,
                                   child: new Container(
                                     child: new Text(
-                                      "夏天一定要吃的食物有哪些",
+                                      results != null
+                                          ? PostData
+                                          .fromJson(results[3])
+                                          .desc
+                                          :"夏天一定要吃的食物有哪些",
                                       style: new TextStyle(
-                                          color: Colors.black, fontSize: 16.0),
+                                          color: Colors.black, fontSize: 12.0),
                                     ),
                                   ),
                                 ),
@@ -240,7 +269,10 @@ Widget ideaCard(BuildContext context) {
                           ),
                           new Container(
                               margin: const EdgeInsets.all(10.0),
-                              width: MediaQuery.of(context).size.width / 5,
+                              width: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .width / 5,
                               child: new AspectRatio(
                                   aspectRatio: 1.0 / 1.0,
                                   child: new Container(
