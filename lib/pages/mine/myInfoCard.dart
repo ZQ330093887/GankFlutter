@@ -55,7 +55,7 @@ Widget myInfoCard(BuildContext context) {
                         children: <Widget>[
                           new Container(
                             child: new Text(
-                              "0",
+                              "85",
                               style: new TextStyle(
                                   fontSize: 16.0,
                                   color: GlobalConfig.fontColor),
