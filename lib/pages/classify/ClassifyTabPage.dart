@@ -11,6 +11,7 @@ class ClassifyTabPage {
   List<ClassifyTabPage> initClassify() {
     // 存储所有页面的列表
     List<ClassifyTabPage> _allPages = <ClassifyTabPage>[
+
       new ClassifyTabPage(
           text: "all",
           detailPage: new DetailPage(
@@ -18,15 +19,15 @@ class ClassifyTabPage {
             showTitle: false,
           )),
       new ClassifyTabPage(
-          text: "Android",
+          text: "福利",
           detailPage: new DetailPage(
-            feedType: ('Android'),
+            feedType: ('福利'),
             showTitle: false,
           )),
       new ClassifyTabPage(
-          text: "瞎推荐",
+          text: "Android",
           detailPage: new DetailPage(
-            feedType: ('瞎推荐'),
+            feedType: ('Android'),
             showTitle: false,
           )),
       new ClassifyTabPage(
@@ -48,6 +49,12 @@ class ClassifyTabPage {
             showTitle: false,
           )),
       new ClassifyTabPage(
+          text: "瞎推荐",
+          detailPage: new DetailPage(
+            feedType: ('瞎推荐'),
+            showTitle: false,
+          )),
+      new ClassifyTabPage(
           text: "App",
           detailPage: new DetailPage(
             feedType: ('App'),
@@ -59,12 +66,6 @@ class ClassifyTabPage {
             feedType: ('休息视频'),
             showTitle: false,
           )),
-      new ClassifyTabPage(
-          text: "福利",
-          detailPage: new DetailPage(
-            feedType: ('福利'),
-            showTitle: false,
-          ))
     ];
     return _allPages;
   }

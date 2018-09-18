@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:GankFlutter/common/GlobalConfig.dart';
+import 'package:GankFlutter/utils/PageRouteUtils.dart';
+import 'SearchPage.dart';
 
 ///侧滑栏
 // ignore: must_be_immutable
@@ -21,17 +24,27 @@ class IndexDrawPage extends StatelessWidget {
                   image: new AssetImage(background), fit: BoxFit.cover)),
         ),
         new ListTile(
-          title: new Text("Home"),
-          trailing: new Icon(Icons.home),
+          title: new Text("福利"),
+          trailing: new Icon(
+            Icons.whatshot,
+            color: Colors.red,
+          ),
           onTap: () {
             print("Home");
+            Navigator.of(context).pop();
+            routePageBuilder(context, GlobalConfig.welfare);
           },
         ),
         new ListTile(
-          title: new Text("Notification"),
-          trailing: new Icon(Icons.notifications),
+          title: new Text("搜索"),
+          trailing: new Icon(
+            Icons.search,
+            color: Colors.brown,
+          ),
           onTap: () {
             print("Notification");
+            Navigator.of(context).pop();
+            routePagerNavigator(context, new SearchPage());
           },
         ),
         new ListTile(
@@ -39,6 +52,7 @@ class IndexDrawPage extends StatelessWidget {
           trailing: new Icon(Icons.exit_to_app),
           onTap: () {
             print("Exit");
+            Navigator.of(context).pop();
           },
         )
       ],

@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:GankFlutter/api/Api.dart';
 import 'package:GankFlutter/common/Constant.dart';
+import 'package:flutter/material.dart';
 
 import 'HomeListView.dart';
 
