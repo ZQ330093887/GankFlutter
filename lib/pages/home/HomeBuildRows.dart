@@ -6,8 +6,9 @@ import 'package:GankFlutter/widget/HomeBanner.dart';
 // ignore: non_constant_identifier_names
 Widget HomeBuildRows(context, postData) {
   List<PostData> banner = new List();
-  postData.forEach((r) {
-    banner.add(PostData.fromJson(r));
-  });
+
+  for (var value in postData) {
+    banner.add(PostData.fromJson(value));
+  }
   return new HomeBanner(banner, 200.0);
 }
