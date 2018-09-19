@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:GankFlutter/common/GlobalConfig.dart';
 import 'package:GankFlutter/utils/PageRouteUtils.dart';
-import 'SearchPage.dart';
+import 'package:GankFlutter/pages/search/SearchPage.dart';
 
 ///侧滑栏
 // ignore: must_be_immutable
@@ -18,7 +18,7 @@ class IndexDrawPage extends StatelessWidget {
           accountName: new Text(name),
           accountEmail: new Text(email),
           currentAccountPicture:
-              new CircleAvatar(backgroundImage: new AssetImage(background)),
+              new CircleAvatar(backgroundImage: new AssetImage(profileimg)),
           decoration: new BoxDecoration(
               image: new DecorationImage(
                   image: new AssetImage(background), fit: BoxFit.cover)),

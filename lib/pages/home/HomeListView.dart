@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:GankFlutter/common/Constant.dart';
 import 'package:GankFlutter/model/DailyResponse.dart';
 
-Widget buildDailyListView(BuildContext context, AsyncSnapshot snapshot) {
+Widget buildDailyListView(
+    BuildContext context, AsyncSnapshot snapshot, var bannerData) {
   Map<String, dynamic> value;
   List content = new List();
   List title = new List();
-
   value = jsonDecode(snapshot.data);
   DailyResponse response = DailyResponse.fromJson(value);
 
@@ -31,18 +31,18 @@ Widget buildDailyListView(BuildContext context, AsyncSnapshot snapshot) {
       title.forEach((title) {
         content.addAll(response.results[title]);
       });
-      return buildListViewBuilder(context, content);
+      return buildListViewBuilder(context, content, bannerData);
     }
   }
 }
 
-Widget buildListViewBuilder(context, List content) {
+Widget buildListViewBuilder(context, List content, var bannerList) {
   return new ListView.builder(
     physics: const AlwaysScrollableScrollPhysics(),
     padding: const EdgeInsets.all(2.0),
     itemCount: content == null ? 0 : content.length,
     itemBuilder: (context, i) {
-      return buildRow(context, content[i], true);
+      return buildRow(context, content[i], true, bannerList);
     },
   );
 }

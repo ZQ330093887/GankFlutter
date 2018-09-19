@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 //文章详情界面
+// ignore: must_be_immutable
 class ArticleDetailPage extends StatefulWidget {
   String title;
   String url;
@@ -50,7 +51,9 @@ class ArticleDetailPageState extends State<ArticleDetailPage> {
         bottom: new PreferredSize(
             preferredSize: const Size.fromHeight(1.0),
             child: isLoadind
-                ? new LinearProgressIndicator()
+                ? new LinearProgressIndicator(
+                    backgroundColor: Color(0xFFE57373),
+                    valueColor: AlwaysStoppedAnimation(Color(0xFFD32F2F)))
                 : new Divider(
                     height: 1.0,
                     color: Theme.of(context).primaryColor,

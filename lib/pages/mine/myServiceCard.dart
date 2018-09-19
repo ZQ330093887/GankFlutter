@@ -202,7 +202,7 @@ Widget myServiceCard(BuildContext context) {
                 width: MediaQuery.of(context).size.width / 3,
                 child: new FlatButton(
                     onPressed: () {
-                      routePageBuilder(context, GlobalConfig.App);
+                      routePageBuilder(context, GlobalConfig.app);
                     },
                     child: new Container(
                       child: new Column(
@@ -217,7 +217,7 @@ Widget myServiceCard(BuildContext context) {
                             ),
                           ),
                           new Container(
-                            child: new Text(GlobalConfig.App,
+                            child: new Text(GlobalConfig.app,
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
                                     fontSize: 14.0)),

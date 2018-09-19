@@ -17,11 +17,11 @@ Future<String> get(String category) async {
   return await response.transform(utf8.decoder).join();
 }
 
-Widget buildRow(context, one, showBanner) {
+Widget buildRow(context, one, showBanner, bannerData) {
   PostData postData = PostData.fromJson(one);
   if (postData.type == '福利') {
     if (showBanner) {
-      return HomeBuildRows(context, postData);
+      return HomeBuildRows(context, bannerData);
     } else {
       return BuildWelfareRows(context, postData);
     }

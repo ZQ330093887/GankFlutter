@@ -43,42 +43,42 @@ class _DetailPageState extends State<DetailPage>
 
   @override
   Widget build(BuildContext context) {
+    Widget detailBuild(BuildContext context) {
+      return requestError
+          ? buildExceptionIndicator("网络请求出错了！")
+          : listData == null
+              ? new Center(
+                  child: new CupertinoActivityIndicator(),
+                )
+              : new SmartRefresher(
+                  enablePullUp: true,
+                  enablePullDown: true,
+                  controller: _refreshController,
+                  headerBuilder: buildDefaultHeader,
+                  footerBuilder: buildDefaultFooter,
+                  footerConfig: new RefreshConfig(),
+                  onRefresh: (up) {
+                    if (up) {
+                      _pullToRefresh();
+                    } else {
+                      _loadingMore();
+                    }
+                  },
+                  child: buildListViewBuilder(context, listData));
+    }
+
     if (widget.showTitle) {
       return new Scaffold(
         appBar: new AppBar(
           title: new Text(widget.feedType),
         ),
-        body: DetailBuild(context),
+        body: detailBuild(context),
       );
     } else {
       return new Scaffold(
-        body: DetailBuild(context),
+        body: detailBuild(context),
       );
     }
-  }
-
-  Widget DetailBuild(BuildContext context) {
-    return requestError
-        ? buildExceptionIndicator("网络请求出错了！")
-        : listData == null
-            ? new Center(
-                child: new CupertinoActivityIndicator(),
-              )
-            : new SmartRefresher(
-                enablePullUp: true,
-                enablePullDown: true,
-                controller: _refreshController,
-                headerBuilder: buildDefaultHeader,
-                footerBuilder: buildDefaultFooter,
-                footerConfig: new RefreshConfig(),
-                onRefresh: (up) {
-                  if (up) {
-                    _pullToRefresh();
-                  } else {
-                    _loadingMore();
-                  }
-                },
-                child: buildListViewBuilder(context, listData));
   }
 
   //网络请求

@@ -38,7 +38,7 @@ Widget buildListViewBuilder(context, List results) {
 //        controller: _controller,
         itemCount: results == null ? 0 : results.length,
         itemBuilder: (context, i) {
-          return buildRow(context, results[i], false);
+          return buildRow(context, results[i], false, null);
         },
       );
   }

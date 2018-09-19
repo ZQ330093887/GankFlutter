@@ -12,16 +12,20 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SearchPage extends StatefulWidget {
+// ignore: must_be_immutable
+class SearchListPage extends StatefulWidget {
+  String id;
+
+  SearchListPage(ValueKey<String> key) : super(key: key) {
+    this.id = key.value.toString();
+  }
+
   @override
-  _SearchPageState createState() => new _SearchPageState();
+  _SearchListPageState createState() => new _SearchListPageState();
 }
 
-class _SearchPageState extends State<SearchPage>
+class _SearchListPageState extends State<SearchListPage>
     with HttpExt, IndicatorFactory {
-  /// 用来搜索的关键字
-  var searchStr = "";
-
   /// 标志当前在请求中。
   var _isRequesting = false;
 
@@ -38,67 +42,45 @@ class _SearchPageState extends State<SearchPage>
     _refreshController.requestRefresh(true);
   }
 
-  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      _isRequesting = true;
+      requestError = true;
+    });
+    searchArticle(false);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        key: _scaffoldKey,
-        appBar: AppBar(
-          title: TextField(
-            controller: controller,
-            // 把键盘设置为搜索。为什么图标没有改变呢，看里面的说明是这样意思呀？
-            textInputAction: TextInputAction.search,
-            // 点击键盘上的搜索触发。
-            onSubmitted: (content) {
-              searchStr = content;
-              // 进行搜索
-              initVar();
-              searchArticle(false);
-            },
-
-            decoration: InputDecoration(
-              hintText: "搜索真的好了，不骗你",
-              hintStyle: TextStyle(color: Colors.white70),
-            ),
-            style: TextStyle(color: Colors.white),
-          ),
-          actions: <Widget>[
-            new IconButton(
-                icon: Icon(Icons.clear),
-                onPressed: () {
-                  controller.clear();
-                })
-          ],
-        ),
-        body: requestError
-            ? _isRequesting
-                ? Center(
-                    child: CircularProgressIndicator(
-                      valueColor:
-                          AlwaysStoppedAnimation(GlobalConfig.colorPrimary),
-                    ),
-                  )
-                : buildExceptionIndicator("是不是傻！不输东西搜啥")
-            : listData == null
-                ? new Center(
-                    child: buildExceptionIndicator("抱歉！这会我傻了，啥也没搜到"),
-                  )
-                : new SmartRefresher(
-                    enablePullUp: true,
-                    enablePullDown: true,
-                    controller: _refreshController,
-                    headerBuilder: buildDefaultHeader,
-                    footerBuilder: buildDefaultFooter,
-                    footerConfig: new RefreshConfig(),
-                    onRefresh: (up) {
-                      if (up) {
-                        _pullToRefresh();
-                      } else {
-                        _loadingMore();
-                      }
-                    },
-                    child: buildListViewBuilder(context, listData)));
+    return requestError
+        ? _isRequesting
+            ? Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation(GlobalConfig.colorPrimary),
+                ),
+              )
+            : buildExceptionIndicator("是不是傻！不输东西搜啥")
+        : listData == null
+            ? new Center(
+                child: buildExceptionIndicator("抱歉！这会我傻了，啥也没搜到"),
+              )
+            : new SmartRefresher(
+                enablePullUp: true,
+                enablePullDown: true,
+                controller: _refreshController,
+                headerBuilder: buildDefaultHeader,
+                footerBuilder: buildDefaultFooter,
+                footerConfig: new RefreshConfig(),
+                onRefresh: (up) {
+                  if (up) {
+                    _pullToRefresh();
+                  } else {
+                    _loadingMore();
+                  }
+                },
+                child: buildListViewBuilder(context, listData));
   }
 
   //刷新
@@ -119,16 +101,10 @@ class _SearchPageState extends State<SearchPage>
   searchArticle(bool isLoadMore) {
     var url = Api.SEARCH_URL;
     url += 'listview/category/' +
-        searchStr +
+        widget.id +
         '/count/10/page/' +
         this.curPage.toString();
     print("feedListUrl: $url");
-    if (!isLoadMore) {
-      setState(() {
-        _isRequesting = true;
-        requestError = true;
-      });
-    }
 
     HttpExt.get(url, (data) {
       setState(() {
@@ -153,8 +129,6 @@ class _SearchPageState extends State<SearchPage>
                 list1.addAll(listData);
                 list1.addAll(_listData);
                 listData = list1;
-                _scaffoldKey.currentState.showSnackBar(SnackBar(
-                    content: Text("又新增了10条数据总共${listData.length}条数据")));
               }
             });
           } else {

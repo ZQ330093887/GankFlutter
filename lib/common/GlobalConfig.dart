@@ -40,7 +40,7 @@ class GlobalConfig {
   static String push = "瞎推荐";
   static String resource = "拓展资源";
   static String welfare = "福利";
-  static String App = "App";
+  static String app = "App";
   static String video = "休息视频";
 
   ///推送

@@ -11,8 +11,6 @@ class UpdatePage extends StatefulWidget {
 class _UpdatePageState extends State<UpdatePage> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-
     final itemInfo = new List<ListItem>.generate(
       _allPages.length,
       (i) => i < _allPages.length - 1
@@ -31,7 +29,8 @@ class _UpdatePageState extends State<UpdatePage> {
 
             if (item is MessageItem) {
               return buildListTile(context, item.page);
-            } else if (item is HeadingItem) {
+            }
+            else if (item is HeadingItem) {
               return buildFooter(context);
             }
           },
@@ -52,6 +51,7 @@ class _UpdatePageState extends State<UpdatePage> {
                 style: const TextStyle(color: Colors.white, fontSize: 12.0),
               ),
               maxRadius: 15.0,
+              backgroundColor: Colors.brown,
             ),
           ),
 
@@ -92,6 +92,7 @@ class _UpdatePageState extends State<UpdatePage> {
             'images/smile.png',
             width: 25.0,
             height: 25.0,
+            color: Colors.red,
           ),
 
           ///间隔
@@ -102,11 +103,11 @@ class _UpdatePageState extends State<UpdatePage> {
             children: <Widget>[
               new Text(
                 '感谢你对我的关注',
-                style: const TextStyle(color: Colors.orange, fontSize: 12.0),
+                style: const TextStyle(color: Colors.red, fontSize: 12.0),
               ),
               new Text(
                 '希望这些更新能给你带来帮助',
-                style: const TextStyle(color: Colors.orange, fontSize: 12.0),
+                style: const TextStyle(color: Colors.red, fontSize: 12.0),
               ),
             ],
           )
@@ -128,10 +129,12 @@ class Page {
 // 存储所有页面的列表
 final List<Page> _allPages = <Page>[
   new Page(
-      versionCode: "1.0", versionName: "发布1.0测试版", versionTime: "2018-8-20"),
+      versionCode: "1.0", versionName: "1.0正式发布成功", versionTime: "2018-8-20"),
   new Page(
       versionCode: "1.1", versionName: "完善业务逻辑，避免造轮子", versionTime: "2018-9-7"),
-  new Page(versionCode: "1.2", versionName: "待定", versionTime: "待定"),
+  new Page(versionCode: "1.2", versionName: "自定义刷新加载样式，添加搜索功能", versionTime: "2018-9-19"),
+  new Page(versionCode: "1.3", versionName: "一个较为完善的里程碑版本", versionTime: "2018-9-30"),
+  new Page(versionCode: "1.n", versionName: "待定", versionTime: "待定"),
 ];
 
 // The base class for the different types of items the List can contain
