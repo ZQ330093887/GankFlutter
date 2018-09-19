@@ -11,7 +11,6 @@ class ClassifyTabPage {
   List<ClassifyTabPage> initClassify() {
     // 存储所有页面的列表
     List<ClassifyTabPage> _allPages = <ClassifyTabPage>[
-
       new ClassifyTabPage(
           text: "all",
           detailPage: new DetailPage(

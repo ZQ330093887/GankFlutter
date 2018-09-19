@@ -84,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
       padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
       child: new RaisedButton(
         padding: new EdgeInsets.fromLTRB(130.0, 10.0, 130.0, 10.0),
-        color: Colors.blue,
+        color: GlobalConfig.colorPrimary,
         textColor: Colors.white,
         disabledColor: Colors.blue[100],
         onPressed: (_phoneNum.isEmpty || _verifyCode.isEmpty)

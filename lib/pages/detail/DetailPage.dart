@@ -78,7 +78,7 @@ class _DetailPageState extends State<DetailPage>
                     _loadingMore();
                   }
                 },
-                child: buildListViewBuilder(context, listData, null));
+                child: buildListViewBuilder(context, listData));
   }
 
   //网络请求

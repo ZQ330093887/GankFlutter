@@ -39,7 +39,7 @@ class IndexDrawPage extends StatelessWidget {
           title: new Text("搜索"),
           trailing: new Icon(
             Icons.search,
-            color: Colors.brown,
+            color: Colors.red,
           ),
           onTap: () {
             print("Notification");

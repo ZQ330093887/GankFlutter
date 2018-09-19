@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:GankFlutter/pages/Application.dart';
+import 'package:GankFlutter/common/GlobalConfig.dart';
 
 void main() => runApp(new MyApp());
 
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Flutter 干货集中营',
       theme: new ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: GlobalConfig.colorPrimary,
       ),
       home: new ApplicationPage(),
     );

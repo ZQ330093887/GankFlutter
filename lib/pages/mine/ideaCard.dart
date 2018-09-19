@@ -18,7 +18,7 @@ Widget ideaCard(BuildContext context, var results) {
                     child: new CircleAvatar(
                       radius: 20.0,
                       child: new Icon(Icons.videocam, color: Colors.white),
-                      backgroundColor: Colors.blue,
+                      backgroundColor: GlobalConfig.colorPrimary,
                     ),
                   ),
                   new Expanded(
@@ -37,7 +37,7 @@ Widget ideaCard(BuildContext context, var results) {
                         },
                         child: new Text(
                           "更多",
-                          style: new TextStyle(color: Colors.blue),
+                          style: new TextStyle(color: GlobalConfig.colorPrimary),
                         )),
                   )
                 ],

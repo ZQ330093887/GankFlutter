@@ -22,15 +22,15 @@ class _ApplicationPageState extends State<ApplicationPage>
     new BottomNavigationBarItem(
         icon: Icon(Icons.home),
         title: Text(GlobalConfig.homeTab),
-        backgroundColor: Colors.lightBlue),
+        backgroundColor: GlobalConfig.colorPrimary),
     new BottomNavigationBarItem(
         icon: Icon(Icons.tune),
         title: Text(GlobalConfig.classyTab),
-        backgroundColor: Colors.lightBlue),
+        backgroundColor: GlobalConfig.colorPrimary),
     new BottomNavigationBarItem(
         icon: Icon(Icons.person),
         title: Text(GlobalConfig.mineTab),
-        backgroundColor: Colors.lightBlue),
+        backgroundColor: GlobalConfig.colorPrimary),
   ];
 
   @override
@@ -49,6 +49,7 @@ class _ApplicationPageState extends State<ApplicationPage>
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      theme: new ThemeData(primaryColor: GlobalConfig.colorPrimary),
       home: Scaffold(
         appBar: new AppBar(
           title: new Text(title),
@@ -70,7 +71,7 @@ class _ApplicationPageState extends State<ApplicationPage>
         bottomNavigationBar: new BottomNavigationBar(
             items: _bottomTabs,
             currentIndex: page,
-            fixedColor: Colors.blue,
+            fixedColor: GlobalConfig.colorPrimary,
             type: BottomNavigationBarType.fixed,
             onTap: onTap),
       ),

@@ -4,6 +4,7 @@ import 'package:GankFlutter/utils/TimeUtils.dart';
 import 'package:GankFlutter/model/DailyResponse.dart';
 import 'package:GankFlutter/utils/PageRouteUtils.dart';
 import 'package:GankFlutter/common/WebViewPage.dart';
+import 'package:GankFlutter/common/GlobalConfig.dart';
 
 Widget buildDetailListRow(context, PostData postData) {
   return new InkWell(
@@ -24,7 +25,7 @@ Widget buildDetailListRow(context, PostData postData) {
                     child: new Icon(
                       Icons.access_time,
                       size: 12.0,
-                      color: Colors.blue,
+                      color: GlobalConfig.colorPrimary,
                     ),
                   ),
                 ),
@@ -61,7 +62,8 @@ Widget buildDetailListRow(context, PostData postData) {
                 ),
                 new Text(
                   postData.who.toString(),
-                  style: new TextStyle(fontSize: 12.0, color: Colors.blue),
+                  style: new TextStyle(
+                      fontSize: 12.0, color: GlobalConfig.colorPrimary),
                 ),
                 new Expanded(
                     child: new Align(

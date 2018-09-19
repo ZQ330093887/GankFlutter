@@ -16,13 +16,12 @@ Widget buildCategoryListView(BuildContext context, AsyncSnapshot snapshot) {
     if (categoryResponse.results.length == 0) {
       return buildExceptionIndicator("这里空空的什么都没有呢...");
     } else {
-      return buildListViewBuilder(context, results, null);
+      return buildListViewBuilder(context, results);
     }
   }
 }
 
-Widget buildListViewBuilder(
-    context, List results, ScrollController _controller) {
+Widget buildListViewBuilder(context, List results) {
   print(results);
   switch (results.length) {
     case 1:
@@ -36,7 +35,7 @@ Widget buildListViewBuilder(
       return new ListView.builder(
         physics: const AlwaysScrollableScrollPhysics(),
         padding: const EdgeInsets.all(2.0),
-        controller: _controller,
+//        controller: _controller,
         itemCount: results == null ? 0 : results.length,
         itemBuilder: (context, i) {
           return buildRow(context, results[i], false);

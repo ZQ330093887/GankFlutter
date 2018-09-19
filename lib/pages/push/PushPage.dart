@@ -44,7 +44,7 @@ class _PushPageState extends State<PushPage> {
               padding: EdgeInsets.only(right: 22.0),
               child: new CupertinoSwitch(
                 value: _lights,
-                activeColor: Colors.blue,
+                activeColor: GlobalConfig.colorPrimary,
                 onChanged: (bool value) {
                   setState(() {
                     _lights = value;

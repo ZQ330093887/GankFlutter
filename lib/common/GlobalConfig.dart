@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class GlobalConfig {
   ///颜色值
+  static Color colorPrimary = Colors.red;
   static Color searchBackgroundColor = new Color(0xFFEBEBEB);
   static Color cardBackgroundColor = Colors.white;
   static Color fontColor = Colors.black54;
@@ -9,8 +10,7 @@ class GlobalConfig {
 
   ///URL链接
   static String wxGithubUrl = "https://github.com/ZQ330093887/GankWX";
-  static String flutterGithubUrl =
-      "https://github.com/ZQ330093887/GankFlutter";
+  static String flutterGithubUrl = "https://github.com/ZQ330093887/GankFlutter";
   static String iosGithubUrl = "https://github.com/ZQ330093887/GankIOSProgect";
   static String androidGithubUrl =
       "https://github.com/ZQ330093887/ConurbationsAndroid";

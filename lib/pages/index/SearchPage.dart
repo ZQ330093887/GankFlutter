@@ -1,19 +1,18 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:GankFlutter/common/GlobalConfig.dart';
 import 'package:GankFlutter/api/Api.dart';
 import 'package:GankFlutter/api/http.dart';
 import 'package:GankFlutter/common/Constant.dart';
 import 'package:GankFlutter/model/DailyResponse.dart';
 import 'package:GankFlutter/pages/detail/DetailListView.dart';
 import 'package:GankFlutter/utils/IndicatorUtils.dart';
-import 'package:GankFlutter/utils/LoadingDialogUtils.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatefulWidget {
-  static const realName = '/search';
-
   @override
   _SearchPageState createState() => new _SearchPageState();
 }
@@ -25,14 +24,19 @@ class _SearchPageState extends State<SearchPage>
 
   /// 标志当前在请求中。
   var _isRequesting = false;
+
+  ///请求是否异常
+  var requestError = true;
   var listData;
   var curPage = 1;
-  var listTotalSize = 0;
-  var requestError = true;
+
   final controller = TextEditingController();
 
-  ScrollController _controller = new ScrollController();
-  LoadingDialogUtils dialogUtils = new LoadingDialogUtils(text: 'aaa');
+  RefreshController _refreshController = new RefreshController();
+
+  void enterRefresh() {
+    _refreshController.requestRefresh(true);
+  }
 
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 
@@ -71,8 +75,8 @@ class _SearchPageState extends State<SearchPage>
             ? _isRequesting
                 ? Center(
                     child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation(
-                          Theme.of(context).primaryColor),
+                      valueColor:
+                          AlwaysStoppedAnimation(GlobalConfig.colorPrimary),
                     ),
                   )
                 : buildExceptionIndicator("是不是傻！不输东西搜啥")
@@ -80,9 +84,21 @@ class _SearchPageState extends State<SearchPage>
                 ? new Center(
                     child: buildExceptionIndicator("抱歉！这会我傻了，啥也没搜到"),
                   )
-                : new RefreshIndicator(
-                    child: buildListViewBuilder(context, listData, _controller),
-                    onRefresh: _pullToRefresh));
+                : new SmartRefresher(
+                    enablePullUp: true,
+                    enablePullDown: true,
+                    controller: _refreshController,
+                    headerBuilder: buildDefaultHeader,
+                    footerBuilder: buildDefaultFooter,
+                    footerConfig: new RefreshConfig(),
+                    onRefresh: (up) {
+                      if (up) {
+                        _pullToRefresh();
+                      } else {
+                        _loadingMore();
+                      }
+                    },
+                    child: buildListViewBuilder(context, listData)));
   }
 
   //刷新
@@ -93,18 +109,10 @@ class _SearchPageState extends State<SearchPage>
   }
 
   //加载更多
-  _SearchPageState() {
-    _controller.addListener(() {
-      var maxScroll = _controller.position.maxScrollExtent;
-      var pixels = _controller.position.pixels;
-      //&& listData.length < listTotalSize
-      if (maxScroll == pixels) {
-        // scroll to bottom, get next page data
-        print("load more ... ");
-        curPage++;
-        searchArticle(true);
-      }
-    });
+  void _loadingMore() async {
+    print("load more ... ");
+    curPage++;
+    searchArticle(true);
   }
 
   //网络请求
@@ -126,6 +134,9 @@ class _SearchPageState extends State<SearchPage>
       setState(() {
         _isRequesting = false;
         requestError = false;
+        new Future.delayed(new Duration(milliseconds: 200)).then((val) {
+          requestBack(isLoadMore);
+        });
       });
       if (data != null) {
         CategoryResponse categoryResponse =
@@ -165,6 +176,14 @@ class _SearchPageState extends State<SearchPage>
     curPage = 1;
     requestError = true;
     _isRequesting = true;
+  }
+
+  void requestBack(bool isLoadMore) {
+    if (isLoadMore) {
+      _refreshController.sendBack(false, RefreshStatus.idle);
+    } else {
+      _refreshController.sendBack(true, RefreshStatus.completed);
+    }
   }
 
   @override
