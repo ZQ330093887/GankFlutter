@@ -14,7 +14,8 @@
 
 1、配置好Flutter开发环境(目前Flutter SDK 版本 v0.5.8 的 Tag )，可参阅 [【搭建环境】](https://flutterchina.club)。
 
-2、clone代码，执行`Packages get`安装第三方包。(因为某些不可抗力原因，国内可能需要设置代理: [代理环境变量](https://flutterchina.club/setup-windows/))
+2、clone代码，执行`Packages get`安装第三方包。(因为某些不可抗力原因，国内可能需要设置代理: 
+[代理环境变量](https://flutterchina.club/setup-windows/))
 3、android studio、XCode、VScode、IDEA都可以
 ## 特别感谢
 
@@ -24,6 +25,7 @@
 ## 期待
 
 - 如果您在使用过程中发现BUG或者觉得有何不合适，欢迎 issues me!
+- 如果老铁觉得还可以，麻烦点个star支持一下,谢谢了!
 - [简书](https://www.jianshu.com/u/9681f3bbb8c2)
 
 ## 学习资料
