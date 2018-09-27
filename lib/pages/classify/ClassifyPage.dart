@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'ClassifyTabPage.dart';
 
 class ClassifyPage extends StatefulWidget {
@@ -28,7 +29,6 @@ class _ClassifyPageState extends State<ClassifyPage>
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Scaffold(
       appBar: new AppBar(
         title: new TabBar(

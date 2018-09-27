@@ -29,8 +29,7 @@ class _UpdatePageState extends State<UpdatePage> {
 
             if (item is MessageItem) {
               return buildListTile(context, item.page);
-            }
-            else if (item is HeadingItem) {
+            } else if (item is HeadingItem) {
               return buildFooter(context);
             }
           },
@@ -132,8 +131,14 @@ final List<Page> _allPages = <Page>[
       versionCode: "1.0", versionName: "1.0正式发布成功", versionTime: "2018-8-20"),
   new Page(
       versionCode: "1.1", versionName: "完善业务逻辑，避免造轮子", versionTime: "2018-9-7"),
-  new Page(versionCode: "1.2", versionName: "自定义刷新加载样式，添加搜索功能", versionTime: "2018-9-19"),
-  new Page(versionCode: "1.3", versionName: "一个较为完善的里程碑版本", versionTime: "2018-9-30"),
+  new Page(
+      versionCode: "1.2",
+      versionName: "自定义刷新加载样式，添加搜索功能",
+      versionTime: "2018-9-19"),
+  new Page(
+      versionCode: "1.3",
+      versionName: "一个较为完善的里程碑版本",
+      versionTime: "2018-9-30"),
   new Page(versionCode: "1.n", versionName: "待定", versionTime: "待定"),
 ];
 

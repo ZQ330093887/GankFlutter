@@ -1,8 +1,7 @@
+import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/utils/PageRouteUtils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:GankFlutter/model/DailyResponse.dart';
-import 'package:GankFlutter/common/WebViewPage.dart';
-import 'package:GankFlutter/utils/PageRouteUtils.dart';
 
 // ignore: non_constant_identifier_names
 Widget BuildWelfareRows(context, PostData postData) {
@@ -11,9 +10,7 @@ Widget BuildWelfareRows(context, PostData postData) {
       theme.textTheme.headline.copyWith(color: Colors.white);
 
   return new InkWell(
-      onTap: () {
-        routePagerNavigator(context, new WebViewPage(postData.toJson()));
-      },
+      onTap: () => showPhoto(context, postData),
       child: new Card(
         margin: new EdgeInsets.all(2.0),
         child: new Padding(
@@ -23,12 +20,13 @@ Widget BuildWelfareRows(context, PostData postData) {
               child: new Stack(
                 children: <Widget>[
                   new Positioned.fill(
-                      child: new FadeInImage.assetNetwork(
-                    placeholder: 'images/empty_data.png',
-                    image: postData.url,
-                    fit: BoxFit.cover,
-                    repeat: ImageRepeat.repeat,
-                  )),
+                    child: new FadeInImage.assetNetwork(
+                      placeholder: 'images/bg.jpg',
+                      image: postData.url,
+                      fit: BoxFit.cover,
+                      repeat: ImageRepeat.repeat,
+                    ),
+                  ),
                   new Positioned(
                     bottom: 6.0,
                     left: 6.0,

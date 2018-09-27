@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:GankFlutter/pages/detail/DetailPage.dart';
+import 'package:flutter/material.dart';
 
 class ClassifyTabPage {
   ClassifyTabPage({this.icon, this.text, this.detailPage});
