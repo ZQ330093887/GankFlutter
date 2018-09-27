@@ -49,22 +49,16 @@ Widget videoCard(BuildContext context, var results) {
               child: new Row(
                 children: <Widget>[
                   new Container(
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width / 2.5,
+                      width: MediaQuery.of(context).size.width / 2.5,
                       margin: const EdgeInsets.only(right: 6.0),
                       child: new AspectRatio(
                           aspectRatio: 4.0 / 2.0,
                           child: new Container(
                             foregroundDecoration: new BoxDecoration(
                                 image: new DecorationImage(
-                                  image: new NetworkImage(
-                                      results != null
-                                          ? PostData
-                                          .fromJson(results[0])
-                                          .url
-                                          : "https://pic2.zhimg.com/50/v2-5942a51e6b834f10074f8d50be5bbd4d_400x224.jpg"),
+                                  image: new NetworkImage(results != null
+                                      ? PostData.fromJson(results[0]).url
+                                      : "https://pic2.zhimg.com/50/v2-5942a51e6b834f10074f8d50be5bbd4d_400x224.jpg"),
                                   centerSlice: new Rect.fromLTRB(
                                       270.0, 180.0, 1360.0, 1730.0),
                                 ),
@@ -73,21 +67,15 @@ Widget videoCard(BuildContext context, var results) {
                           ))),
                   new Container(
                       margin: const EdgeInsets.only(right: 6.0),
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width / 2.5,
+                      width: MediaQuery.of(context).size.width / 2.5,
                       child: new AspectRatio(
                           aspectRatio: 4.0 / 2.0,
                           child: new Container(
                             foregroundDecoration: new BoxDecoration(
                                 image: new DecorationImage(
-                                  image: new NetworkImage(
-                                      results != null
-                                          ? PostData
-                                          .fromJson(results[1])
-                                          .url
-                                          : "https://pic3.zhimg.com/50/v2-7fc9a1572c6fc72a3dea0b73a9be36e7_400x224.jpg"),
+                                  image: new NetworkImage(results != null
+                                      ? PostData.fromJson(results[1]).url
+                                      : "https://pic3.zhimg.com/50/v2-7fc9a1572c6fc72a3dea0b73a9be36e7_400x224.jpg"),
                                   centerSlice: new Rect.fromLTRB(
                                       270.0, 180.0, 1360.0, 1730.0),
                                 ),
@@ -96,21 +84,15 @@ Widget videoCard(BuildContext context, var results) {
                           ))),
                   new Container(
                       margin: const EdgeInsets.only(right: 6.0),
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width / 2.5,
+                      width: MediaQuery.of(context).size.width / 2.5,
                       child: new AspectRatio(
                           aspectRatio: 4.0 / 2.0,
                           child: new Container(
                             foregroundDecoration: new BoxDecoration(
                                 image: new DecorationImage(
-                                  image: new NetworkImage(
-                                      results != null
-                                          ? PostData
-                                          .fromJson(results[2])
-                                          .url
-                                          : "https://pic4.zhimg.com/50/v2-898f43a488b606061c877ac2a471e221_400x224.jpg"),
+                                  image: new NetworkImage(results != null
+                                      ? PostData.fromJson(results[2]).url
+                                      : "https://pic4.zhimg.com/50/v2-898f43a488b606061c877ac2a471e221_400x224.jpg"),
                                   centerSlice: new Rect.fromLTRB(
                                       270.0, 180.0, 1360.0, 1730.0),
                                 ),
@@ -118,21 +100,15 @@ Widget videoCard(BuildContext context, var results) {
                                     const Radius.circular(6.0))),
                           ))),
                   new Container(
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width / 2.5,
+                      width: MediaQuery.of(context).size.width / 2.5,
                       child: new AspectRatio(
                           aspectRatio: 4.0 / 2.0,
                           child: new Container(
                             foregroundDecoration: new BoxDecoration(
                                 image: new DecorationImage(
-                                  image: new NetworkImage(
-                                      results != null
-                                          ? PostData
-                                          .fromJson(results[0])
-                                          .url
-                                          : "https://pic1.zhimg.com/50/v2-0008057d1ad2bd813aea4fc247959e63_400x224.jpg"),
+                                  image: new NetworkImage(results != null
+                                      ? PostData.fromJson(results[0]).url
+                                      : "https://pic1.zhimg.com/50/v2-0008057d1ad2bd813aea4fc247959e63_400x224.jpg"),
                                   centerSlice: new Rect.fromLTRB(
                                       270.0, 180.0, 1360.0, 1730.0),
                                 ),

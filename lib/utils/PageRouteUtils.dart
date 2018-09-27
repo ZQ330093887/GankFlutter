@@ -1,7 +1,5 @@
-import 'package:GankFlutter/model/DailyResponse.dart';
 import 'package:GankFlutter/pages/detail/ArticleDetailPage.dart';
 import 'package:GankFlutter/pages/detail/DetailPage.dart';
-import 'package:GankFlutter/welfare/PhotoView.dart';
 import 'package:flutter/material.dart';
 
 routePageBuilder(BuildContext context, String title) {
@@ -62,21 +60,4 @@ routePagerNavigator(BuildContext context, Widget v) {
           ),
         );
       }));
-}
-
-void showPhoto(BuildContext context, PostData item) {
-  Navigator.of(context).push(
-    MaterialPageRoute(
-      builder: (context) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text(item.desc),
-          ),
-          body: SizedBox.expand(
-            child: Hero(tag: item.url, child: PhotoView(item: item)),
-          ),
-        );
-      },
-    ),
-  );
 }

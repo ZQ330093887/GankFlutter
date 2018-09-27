@@ -1,5 +1,7 @@
 import 'package:GankFlutter/model/DailyResponse.dart';
 import 'package:GankFlutter/utils/PageRouteUtils.dart';
+import 'package:GankFlutter/welfare/PhotoView.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +12,7 @@ Widget BuildWelfareRows(context, PostData postData) {
       theme.textTheme.headline.copyWith(color: Colors.white);
 
   return new InkWell(
-      onTap: () => showPhoto(context, postData),
+      onTap: () => routePagerNavigator(context, PhotoView(item: postData)),
       child: new Card(
         margin: new EdgeInsets.all(2.0),
         child: new Padding(
@@ -19,15 +21,18 @@ Widget BuildWelfareRows(context, PostData postData) {
               height: 300.0,
               child: new Stack(
                 children: <Widget>[
-                  new Positioned.fill(
-                    child: new FadeInImage.assetNetwork(
-                      placeholder: 'images/bg.jpg',
-                      image: postData.url,
-                      fit: BoxFit.cover,
-                      repeat: ImageRepeat.repeat,
+                  Positioned.fill(
+//                    child: FadeInImage.assetNetwork(
+//                        placeholder: 'images/bg.jpg',
+//                        image: postData.url,
+//                        fit: BoxFit.cover),
+                    child: new CachedNetworkImage(
+                      placeholder: CupertinoActivityIndicator(),
+                      imageUrl: postData.url,
+                      fit: BoxFit.fitWidth,
                     ),
                   ),
-                  new Positioned(
+                  Positioned(
                     bottom: 6.0,
                     left: 6.0,
                     right: 6.0,

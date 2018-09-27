@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
-import 'package:transparent_image/transparent_image.dart';
 import 'package:GankFlutter/model/DailyResponse.dart';
 import 'package:GankFlutter/utils/PageRouteUtils.dart';
-import 'package:GankFlutter/common/WebViewPage.dart';
+import 'package:GankFlutter/welfare/PhotoView.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
 
 class HomeBanner extends StatefulWidget {
   final _homeBannerHeight;
@@ -158,20 +158,19 @@ class _HomeBannerState extends State<HomeBanner> {
     return new GestureDetector(
       child: new GestureDetector(
         onTap: () {
-          routePagerNavigator(context, new WebViewPage(item.toJson()));
+          routePagerNavigator(context, new PhotoView(item: item));
 //          print("=====>$item");
         },
-        onTapDown: (donw) {
+        onTapDown: (down) {
           _isEndScroll = false;
         },
         onTapUp: (up) {
           _isEndScroll = true;
         },
-        child: new FadeInImage.memoryNetwork(
-            placeholder: kTransparentImage,
-            image: item.url,
-            height: widget._homeBannerHeight,
-            fit: BoxFit.fitWidth),
+        child: new CachedNetworkImage(
+          imageUrl: item.url,
+          fit: BoxFit.fitWidth,
+        ),
       ),
     );
   }

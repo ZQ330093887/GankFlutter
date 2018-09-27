@@ -1,4 +1,5 @@
 import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 const double _kMinFlingVelocity = 800.0;
@@ -82,21 +83,32 @@ class _PhotoViewState extends State<PhotoView>
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onScaleStart: _handleOnScaleStart,
-      onScaleUpdate: _handleOnScaleUpdate,
-      onScaleEnd: _handleOnScaleEnd,
-      child: ClipRect(
-        child: Transform(
-          transform: Matrix4.identity()
-            ..translate(_offset.dx, _offset.dy)
-            ..scale(_scale),
-          child: Image.network(
-            widget.item.url,
-            fit: BoxFit.cover,
-          ),
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(widget.item.desc),
         ),
-      ),
-    );
+        body: GestureDetector(
+          onScaleStart: _handleOnScaleStart,
+          onScaleUpdate: _handleOnScaleUpdate,
+          onScaleEnd: _handleOnScaleEnd,
+          child: ClipRect(
+            child: Transform(
+              transform: Matrix4.identity()
+                ..translate(_offset.dx, _offset.dy)
+                ..scale(_scale),
+              child: new Stack(
+                children: <Widget>[
+                  Center(child: CupertinoActivityIndicator()),
+                  Positioned.fill(
+                    child: Image.network(
+                      widget.item.url,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ));
   }
 }
