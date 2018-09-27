@@ -130,20 +130,20 @@ final List<Page> _allPages = <Page>[
   new Page(
       versionCode: "1.0", versionName: "1.0正式发布成功", versionTime: "2018-8-20"),
   new Page(
-      versionCode: "1.1", versionName: "完善业务逻辑，避免造轮子", versionTime: "2018-9-7"),
+      versionCode: "2.0", versionName: "完善业务逻辑，避免造轮子", versionTime: "2018-9-7"),
   new Page(
-      versionCode: "1.2",
-      versionName: "自定义刷新加载样式，添加搜索功能",
+      versionCode: "3.0",
+      versionName: "自定义刷新加载样式，添加搜索功能,解决应用启动白屏的问题,改变主界面UI，增强用户体验",
       versionTime: "2018-9-19"),
   new Page(
-      versionCode: "1.3",
-      versionName: "一个较为完善的里程碑版本",
+      versionCode: "3.1",
+      versionName: "UI风格大调整，全新的 UI 风格（里程碑）",
       versionTime: "2018-9-23"),
   new Page(
-      versionCode: "1.4",
-      versionName: "优化交互效果和UI样式，图片加载，展示提升70%",
+      versionCode: "3.1.1",
+      versionName: "首页banner优化，图片加载，展示提升70%,图片带缓存",
       versionTime: "2018-9-30"),
-  new Page(versionCode: "1.n", versionName: "待定", versionTime: "待定"),
+  new Page(versionCode: "n.n", versionName: "待定", versionTime: "待定"),
 ];
 
 // The base class for the different types of items the List can contain
