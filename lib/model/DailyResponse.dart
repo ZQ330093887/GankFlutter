@@ -21,6 +21,11 @@ class CategoryResponse {
     this.error = json['error'];
     this.results = json['results'];
   }
+
+  Map<String, dynamic> toJson() => {
+        'error': error,
+        'results': results,
+      };
 }
 
 class PostData {

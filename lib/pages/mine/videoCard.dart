@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:GankFlutter/common/GlobalConfig.dart';
 import 'package:GankFlutter/model/DailyResponse.dart';
 import 'package:GankFlutter/utils/PageRouteUtils.dart';
+import 'package:flutter/material.dart';
 
 Widget videoCard(BuildContext context, var results) {
   return new Container(
@@ -107,7 +107,7 @@ Widget videoCard(BuildContext context, var results) {
                             foregroundDecoration: new BoxDecoration(
                                 image: new DecorationImage(
                                   image: new NetworkImage(results != null
-                                      ? PostData.fromJson(results[0]).url
+                                      ? PostData.fromJson(results[3]).url
                                       : "https://pic1.zhimg.com/50/v2-0008057d1ad2bd813aea4fc247959e63_400x224.jpg"),
                                   centerSlice: new Rect.fromLTRB(
                                       270.0, 180.0, 1360.0, 1730.0),

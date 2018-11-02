@@ -1,13 +1,15 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:GankFlutter/api/Api.dart';
 import 'package:GankFlutter/api/http.dart';
 import 'package:GankFlutter/common/Constant.dart';
 import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/utils/IndicatorUtils.dart';
+import 'package:GankFlutter/utils/SharedPrfUtils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:GankFlutter/utils/IndicatorUtils.dart';
 
 import 'DetailListView.dart';
 
@@ -24,10 +26,11 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage>
     with HttpExt, IndicatorFactory {
-  var listData;
+  List listData;
   var curPage = 1;
   var listTotalSize = 0;
   var requestError = false;
+
   RefreshController _refreshController;
 
   void enterRefresh() {
@@ -38,7 +41,7 @@ class _DetailPageState extends State<DetailPage>
   void initState() {
     super.initState();
     _refreshController = new RefreshController();
-    getNewsList(false);
+    _loadingData();
   }
 
   @override
@@ -82,12 +85,9 @@ class _DetailPageState extends State<DetailPage>
   }
 
   //网络请求
-  getNewsList(bool isLoadMore) {
-    var url = Api.FEED_URL;
-    url += widget.feedType + '/10/' + this.curPage.toString();
-    print("feedListUrl: $url");
-
-    getGankfromNet(url).then((CategoryResponse categoryResponse) {
+  getNewsList(bool isLoadMore) async {
+    String url = getUrl();
+    await getGankfromNet(url).then((CategoryResponse categoryResponse) {
       if (!categoryResponse.error) {
         var _listData = categoryResponse.results;
         print(_listData);
@@ -95,6 +95,8 @@ class _DetailPageState extends State<DetailPage>
           setState(() {
             if (!isLoadMore) {
               listData = _listData;
+              //目前只缓存第一页数据
+              SharedPrfUtils.saveString(url, json.encode(categoryResponse.toJson()));
             } else {
               List list1 = new List();
               list1.addAll(listData);
@@ -129,5 +131,31 @@ class _DetailPageState extends State<DetailPage>
     print("load more ... ");
     curPage++;
     getNewsList(true);
+  }
+
+  void _loadingData() async {
+    //先获取缓存数据
+    String url = getUrl();
+    var cacheData = await SharedPrfUtils.get(url);
+    if (cacheData != null) {
+      var userMap = json.decode(cacheData);
+      CategoryResponse categoryResponse = CategoryResponse.fromJson(userMap);
+      print("获取缓存数据成功");
+      setState(() {
+        listData = categoryResponse.results;
+      });
+    }
+
+    if (null == listData) {
+      print("开始网络请求");
+      getNewsList(false);
+    }
+  }
+
+  String getUrl() {
+    var url = Api.FEED_URL;
+    url += widget.feedType + '/10/' + this.curPage.toString();
+    print("feedListUrl: $url");
+    return url;
   }
 }
