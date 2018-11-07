@@ -88,6 +88,10 @@ class _PhotoViewState extends State<PhotoView>
           title: Text(widget.item.desc),
         ),
         body: GestureDetector(
+          onTap: () {
+            ///添加单击关闭
+            Navigator.of(context).pop();
+          },
           onScaleStart: _handleOnScaleStart,
           onScaleUpdate: _handleOnScaleUpdate,
           onScaleEnd: _handleOnScaleEnd,

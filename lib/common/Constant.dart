@@ -27,14 +27,9 @@ Future<String> getCacheData(String url) async {
     return json.decode(cacheData);
   } else {
     Future<String> join = get(url);
-
     join.then<void>((String data) {
-      AsyncSnapshot snapshot =
-          new AsyncSnapshot<String>.withData(ConnectionState.done, data);
-      snapshot.inState(snapshot.data);
-
       ///缓存网络请求的数据
-      SharedPrfUtils.saveString(url, json.encode(snapshot.data));
+      SharedPrfUtils.saveString(url, json.encode(data));
       print("-------请求网络数据");
     });
     return join;

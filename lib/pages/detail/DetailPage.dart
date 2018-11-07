@@ -96,7 +96,8 @@ class _DetailPageState extends State<DetailPage>
             if (!isLoadMore) {
               listData = _listData;
               //目前只缓存第一页数据
-              SharedPrfUtils.saveString(url, json.encode(categoryResponse.toJson()));
+              SharedPrfUtils.saveString(
+                  url, json.encode(categoryResponse.toJson()));
             } else {
               List list1 = new List();
               list1.addAll(listData);

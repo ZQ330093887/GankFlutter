@@ -6,11 +6,16 @@ import 'package:GankFlutter/common/Constant.dart';
 import 'package:GankFlutter/model/DailyResponse.dart';
 
 Widget buildDailyListView(
-    BuildContext context, AsyncSnapshot snapshot, var bannerData) {
+    BuildContext context, String homeData, var bannerData) {
+  ///如果首页item的数据为空则显示加载进度条
+  if (homeData == null) {
+    return buildLoadingIndicator();
+  }
+
   Map<String, dynamic> value;
   List content = new List();
   List title = new List();
-  value = jsonDecode(snapshot.data);
+  value = jsonDecode(homeData);
   DailyResponse response = DailyResponse.fromJson(value);
 
   if (response.error) {
