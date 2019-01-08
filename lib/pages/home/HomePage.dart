@@ -12,6 +12,10 @@ import 'package:flutter/material.dart';
 import 'HomeListView.dart';
 
 class HomePage extends StatefulWidget {
+  String dataDay;
+
+  HomePage({Key key, this.dataDay}) : super(key: key);
+
   _NewsListState createState() => new _NewsListState();
 }
 
@@ -101,6 +105,8 @@ class _NewsListState extends State<HomePage> with HttpExt {
       print("banner网络请求数据成功");
       requestHomeBanner(url);
     }
+
+    requestHomeBanner(url);
   }
 
   ///通过网络请求banner数据

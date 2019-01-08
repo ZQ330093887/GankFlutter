@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:GankFlutter/common/GlobalConfig.dart';
 import 'package:GankFlutter/utils/PageRouteUtils.dart';
 import 'package:GankFlutter/pages/search/SearchPage.dart';
+import 'package:GankFlutter/pages/history/HistoryPage.dart';
 
 ///侧滑栏
 // ignore: must_be_immutable
@@ -45,6 +46,18 @@ class IndexDrawPage extends StatelessWidget {
             print("Notification");
             Navigator.of(context).pop();
             routePagerNavigator(context, new SearchPage());
+          },
+        ),
+        new ListTile(
+          title: new Text("历史"),
+          trailing: new Icon(
+            Icons.history,
+            color: Colors.red,
+          ),
+          onTap: () {
+            print("Notification");
+            Navigator.of(context).pop();
+            routePagerNavigator(context, new HistoryPage());
           },
         ),
         new ListTile(

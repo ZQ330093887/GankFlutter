@@ -23,6 +23,8 @@ dependencies:
   pull_to_refresh: ^1.1.6
   cached_network_image: "^0.4.1"
   shared_preferences: ^0.4.2
+  date_utils: ^0.1.0
+  intl: ^0.15.7
 
 dev_dependencies:
   flutter_test:
