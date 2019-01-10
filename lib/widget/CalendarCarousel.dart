@@ -3,6 +3,7 @@ library flutter_calendar_dooboo;
 import 'package:GankFlutter/model/EventList.dart';
 import 'package:date_utils/date_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:GankFlutter/utils/TimeUtils.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
@@ -24,7 +25,7 @@ class CalendarCarousel extends StatefulWidget {
     fontSize: 14.0,
   );
   final TextStyle defaultTodayTextStyle = TextStyle(
-    color: Colors.white,
+    color: Colors.teal,
     fontSize: 14.0,
   );
   final TextStyle defaultSelectedDayTextStyle = TextStyle(
@@ -395,9 +396,9 @@ class _CalendarState extends State<CalendarCarousel> {
                       color:
                           isSelectedDay && widget.selectedDayButtonColor != null
                               ? widget.selectedDayButtonColor
-                              : isToday && widget.todayButtonColor != null
-                                  ? widget.todayButtonColor
-                                  : widget.dayButtonColor,
+//                              : isToday && widget.todayButtonColor != null
+//                              ? widget.todayButtonColor
+                              : widget.dayButtonColor,
                       onPressed: () => _onDayPressed(now),
                       padding: EdgeInsets.all(widget.dayPadding),
                       shape: widget.daysHaveCircularBorder == null
@@ -459,7 +460,7 @@ class _CalendarState extends State<CalendarCarousel> {
                                           ? defaultTextStyle
                                           : widget.defaultInactiveDaysTextStyle,
                               child: Text(
-                                '${now.day}',
+                                isToday ? '今' : '${now.day}',
                                 style: (_localeDate.dateSymbols.WEEKENDRANGE
                                             .contains(
                                                 (index - 1 + firstDayOfWeek) %
@@ -585,9 +586,9 @@ class _CalendarState extends State<CalendarCarousel> {
                         color: isSelectedDay &&
                                 widget.selectedDayButtonColor != null
                             ? widget.selectedDayButtonColor
-                            : isToday && widget.todayButtonColor != null
-                                ? widget.todayButtonColor
-                                : widget.dayButtonColor,
+//                                : isToday && widget.todayButtonColor != null
+//                                ? widget.todayButtonColor
+                            : widget.dayButtonColor,
                         onPressed: () => _onDayPressed(now),
                         padding: EdgeInsets.all(widget.dayPadding),
                         shape: widget.daysHaveCircularBorder == null
@@ -874,30 +875,6 @@ class _CalendarState extends State<CalendarCarousel> {
       );
     }
     return list;
-  }
-
-  String getWeekDay(int i) {
-    var weekDay = ["日", "一", "二", "三", "四", "五", "六"];
-    return '${weekDay[i]}';
-  }
-
-  String getMonth(date) {
-    DateTime dateTime = DateTime.parse(date);
-    var months = [
-      "一月",
-      "二月",
-      "三月",
-      "四月",
-      "五月",
-      "六月",
-      "七月",
-      "八月",
-      "九月",
-      "十月",
-      "十一月",
-      "十二月"
-    ];
-    return '${months[dateTime.month - 1]}';
   }
 
   Widget _renderMarked(DateTime now) {

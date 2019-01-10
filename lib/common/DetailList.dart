@@ -30,17 +30,19 @@ Widget buildDetailListRow(context, PostData postData) {
                   ),
                 ),
                 new Text(
-                  postData.publishedAt.toString(),
+                  formatDateStr(postData.publishedAt.toString()),
                   style: new TextStyle(fontSize: 12.0, color: Colors.grey),
                 ),
                 new Expanded(
                     child: new Align(
-                  alignment: Alignment.centerRight,
-                  child: new Text(
-                    getTimestampString(DateTime.parse(postData.publishedAt)),
-                    style: new TextStyle(fontSize: 12.0, color: Colors.grey),
-                  ),
-                )),
+                      alignment: Alignment.centerRight,
+                      child: new Text(
+                        getTimestampString(
+                            DateTime.parse(postData.publishedAt)),
+                        style: new TextStyle(
+                            fontSize: 12.0, color: Colors.grey),
+                      ),
+                    )),
               ]),
               new Container(
                 margin: new EdgeInsets.fromLTRB(2.0, 4.0, 2.0, 14.0),
@@ -67,12 +69,13 @@ Widget buildDetailListRow(context, PostData postData) {
                 ),
                 new Expanded(
                     child: new Align(
-                  alignment: Alignment.centerRight,
-                  child: new Text(
-                    postData.source.toString(),
-                    style: new TextStyle(fontSize: 12.0, color: Colors.grey),
-                  ),
-                )),
+                      alignment: Alignment.centerRight,
+                      child: new Text(
+                        postData.source.toString(),
+                        style: new TextStyle(
+                            fontSize: 12.0, color: Colors.grey),
+                      ),
+                    )),
               ]),
             ],
           ),
