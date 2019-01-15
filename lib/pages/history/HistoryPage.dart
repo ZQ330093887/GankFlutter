@@ -31,11 +31,14 @@ class _HistoryPageState extends State<HistoryPage> with HttpExt {
   Widget build(BuildContext context) {
     CalendarCarousel _calendarCarousel = CalendarCarousel(
       weekendTextStyle: TextStyle(
-        color: Colors.red,
+        color: GlobalConfig.colorPrimary,
       ),
       thisMonthDayBorderColor: Colors.grey,
       weekFormat: false,
       markedDatesMap: _markedDateMap,
+      todayBorderColor: GlobalConfig.colorPrimary,
+      todayButtonColor: GlobalConfig.colorPrimary,
+      iconColor: GlobalConfig.colorPrimary,
       height: 430.0,
       customGridViewPhysics: NeverScrollableScrollPhysics(),
       markedDateShowIcon: true,

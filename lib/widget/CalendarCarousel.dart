@@ -5,12 +5,15 @@ import 'package:date_utils/date_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:GankFlutter/utils/TimeUtils.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:GankFlutter/common/GlobalConfig.dart';
+import 'package:GankFlutter/utils/PageRouteUtils.dart';
+import 'package:GankFlutter/pages/history/HistoryDetailPage.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
 class CalendarCarousel extends StatefulWidget {
   final TextStyle defaultHeaderTextStyle = TextStyle(
     fontSize: 20.0,
-    color: Colors.blue,
+    color: GlobalConfig.colorPrimary,
   );
   final TextStyle defaultPrevDaysTextStyle = TextStyle(
     color: Colors.grey,
@@ -33,7 +36,7 @@ class CalendarCarousel extends StatefulWidget {
     fontSize: 14.0,
   );
   final TextStyle defaultWeekdayTextStyle = TextStyle(
-    color: Colors.red,
+    color: GlobalConfig.colorPrimary,
     fontSize: 14.0,
   );
   final TextStyle defaultWeekendTextStyle = TextStyle(
@@ -691,16 +694,19 @@ class _CalendarState extends State<CalendarCarousel> {
       list.forEach((e) => dateTime = e);
     }
 
-//    if (dateTime != null) {
-//      String dataDay = dateTime.year.toString() +
-//          "/" +
-//          dateTime.month.toString() +
-//          "/" +
-//          dateTime.day.toString();
-//
-//      Navigator.of(context).pop();
-//      routePagerNavigator(context, new HomePage(dataDay: dataDay));
-//    }
+    if (dateTime != null) {
+      String dataDay = dateTime.year.toString() +
+          "/" +
+          dateTime.month.toString() +
+          "/" +
+          dateTime.day.toString();
+      Navigator.of(context).pop();
+      routePagerNavigator(
+          context,
+          new HistoryDetailPage(
+            data: dataDay,
+          ));
+    }
 
     ///暂时不可点击，点击
   }
@@ -933,7 +939,7 @@ class _CalendarState extends State<CalendarCarousel> {
               width: double.infinity,
               height: double.infinity,
               decoration: new BoxDecoration(
-                color: Colors.red,
+                color: GlobalConfig.colorPrimary,
                 borderRadius: BorderRadius.all(Radius.circular(1000)),
               ),
               child: Center(

@@ -32,6 +32,15 @@ class HttpExt {
     return CategoryResponse.fromJson(jsonDecode(responseStr));
   }
 
+  Future<GankPost> getGankDayData(String url) async {
+    final responseStr = await getRequest(url);
+    return toGankDayList(responseStr);
+  }
+
+  GankPost toGankDayList(String responseStr) {
+    return GankPost.fromJson(jsonDecode(responseStr));
+  }
+
   static void post(String url, Function callback,
       {Map<String, String> params, Function errorCallback}) async {
     try {

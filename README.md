@@ -2,7 +2,6 @@
 一款追求全新用户体验的干货集中营 flutter 版 客户端
 - [GitHub IOS版本](https://github.com/ZQ330093887/GankIOSProgect)
 - [GitHub 小程序版本](https://github.com/ZQ330093887/GankWX)
-- [GitHub Flutter版本](https://github.com/ZQ330093887/GankFlutter)
 - [GitHub Android版本](https://github.com/ZQ330093887/ConurbationsAndroid)
 
 ## 应用截图
@@ -79,6 +78,7 @@
 - 3.1.3
     - 自定义日历控件
     - 新增历史车轮页面，通过日历展示哪天有干货
+    - 新增展示某日干货页面，点击日历查询日期对应的干货信息
 - 3.1.2
     - 分类列表页添加缓存，优化用户体验
     - 首页banner，item各自添加缓存功能
