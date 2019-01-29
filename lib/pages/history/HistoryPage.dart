@@ -6,6 +6,7 @@ import 'package:GankFlutter/common/GlobalConfig.dart';
 import 'package:GankFlutter/model/DailyResponse.dart';
 import 'package:GankFlutter/model/EventList.dart';
 import 'package:GankFlutter/utils/SharedPrfUtils.dart';
+import 'package:GankFlutter/utils/DialogUtils.dart';
 import 'package:GankFlutter/widget/CalendarCarousel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,11 @@ class HistoryPage extends StatefulWidget {
 
 class _HistoryPageState extends State<HistoryPage> with HttpExt {
   EventList _markedDateMap = new EventList();
+
+//  LoadingDialogUtils dialogUtils = new LoadingDialogUtils(
+//    //调用对话框
+//    text: '正在更新...',
+//  );
 
   /// 标志当前在请求中。
   var _isRequesting = true;
@@ -48,7 +54,18 @@ class _HistoryPageState extends State<HistoryPage> with HttpExt {
     );
 
     return new Scaffold(
-        appBar: new AppBar(title: new Text('历史车轮')),
+        appBar: new AppBar(
+          title: new Text('历史车轮'),
+          actions: <Widget>[
+            new IconButton(
+                icon: new Icon(Icons.autorenew),
+                onPressed: () {
+                  ///这里添加刷新功能
+                  DialogUtils.show(context, "更新中…");
+                  requestHistoryData();
+                })
+          ],
+        ),
         body: _isRequesting
             ? Center(
                 child: CircularProgressIndicator(
@@ -96,6 +113,7 @@ class _HistoryPageState extends State<HistoryPage> with HttpExt {
         print(_listData);
         if (_listData.length > 0) {
           setState(() {
+            DialogUtils.hidden();
             _isRequesting = false;
             timeDataFormat(_listData);
             SharedPrfUtils.saveString(
@@ -107,6 +125,7 @@ class _HistoryPageState extends State<HistoryPage> with HttpExt {
   }
 
   void timeDataFormat(var listData) {
+    _markedDateMap.clear();
     for (var item in listData) {
       List<String> sp = item.split("-");
       _markedDateMap.add(
