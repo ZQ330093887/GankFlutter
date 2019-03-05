@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:GankFlutter/common/Constant.dart';
 import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/pages/home/HomeBuildRows.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-Widget buildDailyListView(
-    BuildContext context, String homeData, var bannerData) {
+Widget buildDailyListView(BuildContext context, String homeData) {
   ///如果首页item的数据为空则显示加载进度条
   if (homeData == null) {
     return buildLoadingIndicator();
@@ -14,6 +14,7 @@ Widget buildDailyListView(
 
   Map<String, dynamic> value;
   List content = new List();
+  List banner = new List();
   List title = new List();
   value = jsonDecode(homeData);
   DailyResponse response = DailyResponse.fromJson(value);
@@ -34,20 +35,30 @@ Widget buildDailyListView(
       });
 
       title.forEach((title) {
-        content.addAll(response.results[title]);
+        if (title == '福利') {
+          banner.add(response.results[title]);
+        } else {
+          content.addAll(response.results[title]);
+        }
       });
-      return buildListViewBuilder(context, content, bannerData);
+
+      content.insert(0, banner);
+      return buildListViewBuilder(context, content);
     }
   }
 }
 
-Widget buildListViewBuilder(context, List content, var bannerList) {
+Widget buildListViewBuilder(context, List data) {
   return new ListView.builder(
     physics: const AlwaysScrollableScrollPhysics(),
     padding: const EdgeInsets.all(2.0),
-    itemCount: content == null ? 0 : content.length,
+    itemCount: data == null ? 0 : data.length,
     itemBuilder: (context, i) {
-      return buildRow(context, content[i], true, bannerList);
+      if (i == 0) {
+        return HomeBuildRows(data[i]);
+      } else {
+        return buildRow(context, data[i]);
+      }
     },
   );
 }

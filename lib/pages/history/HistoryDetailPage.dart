@@ -39,20 +39,20 @@ class _HistoryDetailState extends State<HistoryDetailPage>
       return requestError
           ? buildExceptionIndicator("网络请求出错了！")
           : listData == null
-              ? new Center(
-                  child: new CupertinoActivityIndicator(),
-                )
-              : new SmartRefresher(
-                  enablePullUp: false,
-                  enablePullDown: true,
-                  controller: _refreshController,
-                  headerBuilder: buildDefaultHeader,
-                  onRefresh: (up) {
-                    if (up) {
-                      _pullToRefresh();
-                    }
-                  },
-                  child: buildHistoryListView(context, listData));
+          ? new Center(
+        child: new CupertinoActivityIndicator(),
+      )
+          : new SmartRefresher(
+          enablePullUp: false,
+          enablePullDown: true,
+          controller: _refreshController,
+          headerBuilder: buildDefaultHeader,
+          onRefresh: (up) {
+            if (up) {
+              _pullToRefresh();
+            }
+          },
+          child: buildHistoryListView(context, listData));
     }
 
     return new Scaffold(
@@ -73,10 +73,10 @@ class _HistoryDetailState extends State<HistoryDetailPage>
       requestError = false;
     }).catchError((error) {
       requestError = true;
+    }).whenComplete(() {
+      _refreshController.sendBack(
+          true, requestError ? RefreshStatus.failed : RefreshStatus.completed);
     });
-
-    _refreshController.sendBack(
-        true, requestError ? RefreshStatus.failed : RefreshStatus.completed);
   }
 
   //刷新

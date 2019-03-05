@@ -5,7 +5,6 @@ import 'dart:io';
 import 'package:GankFlutter/common/DetailList.dart';
 import 'package:GankFlutter/common/WelfareBuildRows.dart';
 import 'package:GankFlutter/model/DailyResponse.dart';
-import 'package:GankFlutter/pages/home/HomeBuildRows.dart';
 import 'package:GankFlutter/utils/SharedPrfUtils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -36,14 +35,10 @@ Future<String> getCacheData(String url) async {
   }
 }
 
-Widget buildRow(context, one, showBanner, bannerData) {
+Widget buildRow(context, one) {
   PostData postData = PostData.fromJson(one);
   if (postData.type == '福利') {
-    if (showBanner) {
-      return HomeBuildRows(context, bannerData);
-    } else {
-      return BuildWelfareRows(context, postData);
-    }
+    return BuildWelfareRows(context, postData);
   } else {
     return buildDetailListRow(context, postData);
   }

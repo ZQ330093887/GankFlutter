@@ -4,11 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // ignore: non_constant_identifier_names
-Widget HomeBuildRows(context, postData) {
+Widget HomeBuildRows(postData) {
   List<PostData> banner = new List();
-
   if (postData != null) {
-    for (var value in postData) {
+    for (var value in postData[0]) {
       banner.add(PostData.fromJson(value));
     }
   }

@@ -20,7 +20,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _NewsListState extends State<HomePage> with HttpExt {
-  var listData;
+//  var listData;
   String snapshot;
   var url = Api.FEED_URL + '福利/5/1';
 
@@ -75,14 +75,14 @@ class _NewsListState extends State<HomePage> with HttpExt {
 //          }
 //        },
 //      ),
-      child: buildDailyListView(context, snapshot, listData),
+      child: buildDailyListView(context, snapshot),
       onRefresh: _pullToRefresh,
     );
   }
 
   void loadingData() {
     ///请求banner数据
-    loadBannerData();
+//    loadBannerData();
 
     ///请求首页item数据
     getHomeItemData();
@@ -99,7 +99,7 @@ class _NewsListState extends State<HomePage> with HttpExt {
       CategoryResponse categoryResponse = CategoryResponse.fromJson(userMap);
       print("banner获取缓存数据成功");
       setState(() {
-        listData = categoryResponse.results;
+//        listData = categoryResponse.results;
       });
     } else {
       print("banner网络请求数据成功");
@@ -117,7 +117,7 @@ class _NewsListState extends State<HomePage> with HttpExt {
         print(_listData);
         if (_listData.length > 0) {
           setState(() {
-            listData = _listData;
+//            listData = _listData;
             //目前只缓存第一页数据
             SharedPrfUtils.saveString(
                 url, json.encode(categoryResponse.toJson()));

@@ -12,7 +12,7 @@ import 'package:GankFlutter/utils/PageRouteUtils.dart';
 
 Widget buildCategoryListView(BuildContext context, AsyncSnapshot snapshot) {
   CategoryResponse categoryResponse =
-      CategoryResponse.fromJson(jsonDecode(snapshot.data));
+  CategoryResponse.fromJson(jsonDecode(snapshot.data));
   List results = categoryResponse.results;
 
   if (categoryResponse.error) {
@@ -43,7 +43,7 @@ Widget buildListViewBuilder(context, List results) {
 //        controller: _controller,
         itemCount: results == null ? 0 : results.length,
         itemBuilder: (context, i) {
-          return buildRow(context, results[i], false, null);
+          return buildRow(context, results[i]);
         },
       );
   }
@@ -72,7 +72,16 @@ GestureDetector _buildImageBanner(BuildContext context, GankPost postData) {
   return GestureDetector(
     onTap: () {
       PostData p = new PostData(
-          "", "", "美图", null, "", "", "", postData.girlImage, false, "");
+          "",
+          "",
+          "美图",
+          null,
+          "",
+          "",
+          "",
+          postData.girlImage,
+          false,
+          "");
       routePagerNavigator(context, new PhotoView(item: p));
     },
     child: CachedNetworkImage(
