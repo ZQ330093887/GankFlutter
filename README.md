@@ -10,12 +10,6 @@
 | ![1](https://upload-images.jianshu.io/upload_images/3278692-49ee97b13c954c7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) | ![2](https://upload-images.jianshu.io/upload_images/3278692-86a01b954f47b677.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) | ![3](https://upload-images.jianshu.io/upload_images/3278692-c40528ed4748938a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) | ![4](https://upload-images.jianshu.io/upload_images/3278692-5674f9df10aa7b86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) | ![5](https://upload-images.jianshu.io/upload_images/3278692-9bfa67e12c7f9ab6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) |
 | :--: | :--: | :--: | :--: | :--: |
 | 每日干货 | 分类干货 | 个人中心 | 福利社区 | 历史车轮|
-
-## 加个广告：跪求坑位
-
-  #### 🔥 最近打算跳槽，各位同学有相关的坑位(Flutter 、其他移动端都可以考虑，坐标北京)，还请喊小弟一声.谢谢🙏🙏🙏
-
-
 ### 编译运行流程
 
 1、配置好Flutter开发环境(目前Flutter SDK 版本 v0.5.8 的 Tag )，可参阅 [【搭建环境】](https://flutterchina.club)。
@@ -23,6 +17,14 @@
 2、clone代码，执行`Packages get`安装第三方包。(因为某些不可抗力原因，国内可能需要设置代理: 
 [代理环境变量](https://flutterchina.club/setup-windows/))
 3、android studio、XCode、VScode、IDEA都可以
+
+
+## 加个广告：跪求坑位
+
+  #### 🔥 最近打算跳槽，各位同学有相关的坑位(Flutter 、其他移动端都可以考虑，坐标北京)，还请喊小弟一声.谢谢🙏🙏🙏
+
+
+
 
 ## 特别感谢
 
