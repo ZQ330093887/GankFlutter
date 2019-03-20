@@ -1,4 +1,10 @@
 # GankFlutter
+
+## 加个广告：跪求坑位
+
+  #### 🔥 最近打算跳槽，各位同学有相关的坑位(Flutter 、其他移动端都可以考虑，坐标北京)，还请喊小弟一声.谢谢🙏🙏🙏
+
+
 一款追求全新用户体验的干货集中营 flutter 版 客户端
 - [GitHub IOS版本](https://github.com/ZQ330093887/GankIOSProgect)
 - [GitHub 小程序版本](https://github.com/ZQ330093887/GankWX)
@@ -16,10 +22,6 @@
 2、clone代码，执行`Packages get`安装第三方包。(因为某些不可抗力原因，国内可能需要设置代理: 
 [代理环境变量](https://flutterchina.club/setup-windows/))
 3、android studio、XCode、VScode、IDEA都可以
-
-## 加个广告：跪求坑位
-
-  #### 🔥 最近打算跳槽，各位同学有相关的坑位，还请喊小弟一声。谢谢🙏🙏🙏
 
 ## 特别感谢
 
