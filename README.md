@@ -16,6 +16,11 @@
 2、clone代码，执行`Packages get`安装第三方包。(因为某些不可抗力原因，国内可能需要设置代理: 
 [代理环境变量](https://flutterchina.club/setup-windows/))
 3、android studio、XCode、VScode、IDEA都可以
+
+## 加个广告：跪求坑位
+
+  #### 🔥 最近打算跳槽，各位同学有相关的坑位，还请喊小弟一声。谢谢🙏🙏🙏
+
 ## 特别感谢
 
 - API提供：[@代码家](https://github.com/daimajia)
