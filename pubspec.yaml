@@ -25,6 +25,7 @@ dependencies:
   shared_preferences: ^0.4.2
   date_utils: ^0.1.0
   intl: ^0.15.7
+  carousel_slider: ^1.1.0
 
 dev_dependencies:
   flutter_test:

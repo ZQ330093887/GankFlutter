@@ -1,5 +1,5 @@
 import 'package:GankFlutter/model/DailyResponse.dart';
-import 'package:GankFlutter/widget/HomeBanner.dart';
+import 'package:GankFlutter/widget/NewsBannerView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,5 +11,5 @@ Widget HomeBuildRows(postData) {
       banner.add(PostData.fromJson(value));
     }
   }
-  return new HomeBanner(banner, 200.0);
+  return new NewsBannerView(banner);
 }
