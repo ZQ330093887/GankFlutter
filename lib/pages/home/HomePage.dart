@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 
 import 'HomeListView.dart';
 
+// ignore: must_be_immutable
 class HomePage extends StatefulWidget {
   String dataDay;
 
@@ -20,17 +21,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _NewsListState extends State<HomePage> with HttpExt {
-//  var listData;
   String snapshot;
-  var url = Api.FEED_URL + '福利/5/1';
-
-  ///该方法暂时放弃
-  Future<Null> loadData() async {
-    await get(Api.TODAY_URL); //注意await关键字
-    if (!mounted) return; //异步处理，防止报错
-    setState(() {}); //什么都不做，只为触发RefreshIndicator的子控件刷新
-  }
-
   Future<Null> _pullToRefresh() async {
     await get(Api.TODAY_URL).then<void>((String data) {
       setState(() {
@@ -57,13 +48,8 @@ class _NewsListState extends State<HomePage> with HttpExt {
     );
   }
 
-  void loadingData() {
-    ///请求首页item数据
-    getHomeItemData();
-  }
-
   ///请求首页item数据
-  void getHomeItemData() {
+  void loadingData() {
     getCacheData(Api.TODAY_URL).then<void>((String data) {
       setState(() {
         snapshot = data;

@@ -8,7 +8,7 @@ import 'package:GankFlutter/common/Constant.dart';
 import 'package:GankFlutter/model/DailyResponse.dart';
 import 'package:GankFlutter/pages/detail/DetailListView.dart';
 import 'package:GankFlutter/utils/IndicatorUtils.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +26,9 @@ class SearchListPage extends StatefulWidget {
 
 class _SearchListPageState extends State<SearchListPage>
     with HttpExt, IndicatorFactory {
+  ///异常描述
+  var _errorString = "傻了吧唧的！不输入东西搜啥";
+
   /// 标志当前在请求中。
   var _isRequesting = false;
 
@@ -35,12 +38,6 @@ class _SearchListPageState extends State<SearchListPage>
   var curPage = 1;
 
   final controller = TextEditingController();
-
-  RefreshController _refreshController = new RefreshController();
-
-  void enterRefresh() {
-    _refreshController.requestRefresh(true);
-  }
 
   @override
   void initState() {
@@ -61,24 +58,21 @@ class _SearchListPageState extends State<SearchListPage>
                   valueColor: AlwaysStoppedAnimation(GlobalConfig.colorPrimary),
                 ),
               )
-            : buildExceptionIndicator("是不是傻！不输东西搜啥")
+            : buildExceptionIndicator(_errorString)
         : listData == null
             ? new Center(
                 child: buildExceptionIndicator("抱歉！这会我傻了，啥也没搜到"),
               )
-            : new SmartRefresher(
-                enablePullUp: true,
-                enablePullDown: true,
-                controller: _refreshController,
-                headerBuilder: buildDefaultHeader,
-                footerBuilder: buildDefaultFooter,
-                footerConfig: new RefreshConfig(),
-                onRefresh: (up) {
-                  if (up) {
-                    _pullToRefresh();
-                  } else {
-                    _loadingMore();
-                  }
+            : new EasyRefresh(
+                autoLoad: true,
+                key: easyRefreshKey,
+                refreshHeader: buildDefaultHeader(),
+                refreshFooter: buildDefaultFooter(),
+                onRefresh: () {
+                  _pullToRefresh();
+                },
+                loadMore: () {
+                  _loadingMore();
                 },
                 child: buildListViewBuilder(context, listData));
   }
@@ -139,24 +133,23 @@ class _SearchListPageState extends State<SearchListPage>
         }
       }
     }, (e) {
-      print("get news list error: $e");
+      print(" get news list error: $e");
       setState(() {
         requestError = true;
+        if (e.toString().split("<h1>") != null &&
+            e.toString().split("<h1>").length > 1) {
+          _errorString = "服务器异常，修复中…";
+        }
       });
     });
   }
 
-  void initVar() {
-    curPage = 1;
-    requestError = true;
-    _isRequesting = true;
-  }
-
   void requestBack(bool isLoadMore) {
+    if (requestError) return;
     if (isLoadMore) {
-      _refreshController.sendBack(false, RefreshStatus.idle);
+      easyRefreshKey.currentState.callLoadMoreFinish();
     } else {
-      _refreshController.sendBack(true, RefreshStatus.completed);
+      easyRefreshKey.currentState.callRefreshFinish();
     }
   }
 

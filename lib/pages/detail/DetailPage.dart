@@ -9,7 +9,7 @@ import 'package:GankFlutter/utils/IndicatorUtils.dart';
 import 'package:GankFlutter/utils/SharedPrfUtils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 import 'DetailListView.dart';
 
@@ -31,16 +31,9 @@ class _DetailPageState extends State<DetailPage>
   var listTotalSize = 0;
   var requestError = false;
 
-  RefreshController _refreshController;
-
-  void enterRefresh() {
-    _refreshController.requestRefresh(true);
-  }
-
   @override
   void initState() {
     super.initState();
-    _refreshController = new RefreshController();
     _loadingData();
   }
 
@@ -53,19 +46,16 @@ class _DetailPageState extends State<DetailPage>
               ? new Center(
                   child: new CupertinoActivityIndicator(),
                 )
-              : new SmartRefresher(
-                  enablePullUp: true,
-                  enablePullDown: true,
-                  controller: _refreshController,
-                  headerBuilder: buildDefaultHeader,
-                  footerBuilder: buildDefaultFooter,
-                  footerConfig: new RefreshConfig(),
-                  onRefresh: (up) {
-                    if (up) {
-                      _pullToRefresh();
-                    } else {
-                      _loadingMore();
-                    }
+              : new EasyRefresh(
+                  autoLoad: true,
+                  key: easyRefreshKey,
+                  refreshHeader: buildDefaultHeader(),
+                  refreshFooter: buildDefaultFooter(),
+                  onRefresh: () {
+                    _pullToRefresh();
+                  },
+                  loadMore: () {
+                    _loadingMore();
                   },
                   child: buildListViewBuilder(context, listData));
     }
@@ -107,16 +97,18 @@ class _DetailPageState extends State<DetailPage>
           });
         }
       }
-
-      if (isLoadMore) {
-        _refreshController.sendBack(false, RefreshStatus.idle);
-      } else {
-        _refreshController.sendBack(true, RefreshStatus.completed);
-      }
-      return false;
     }).catchError((error) {
-      _refreshController.sendBack(true, RefreshStatus.failed);
-      return false;
+      setState(() {
+        requestError = true;
+      });
+    }).whenComplete(() {
+      if (requestError) return;
+      if (easyRefreshKey.currentState == null) return;
+      if (isLoadMore) {
+        easyRefreshKey.currentState.callLoadMoreFinish();
+      } else {
+        easyRefreshKey.currentState.callRefreshFinish();
+      }
     });
   }
 

@@ -8,8 +8,9 @@ import 'package:GankFlutter/pages/detail/DetailListView.dart';
 import 'package:GankFlutter/utils/IndicatorUtils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 
+// ignore: must_be_immutable
 class HistoryDetailPage extends StatefulWidget {
   String data;
 
@@ -24,12 +25,9 @@ class _HistoryDetailState extends State<HistoryDetailPage>
   GankPost listData;
   var requestError = false;
 
-  RefreshController _refreshController;
-
   @override
   void initState() {
     super.initState();
-    _refreshController = new RefreshController();
     _loadingData();
   }
 
@@ -39,20 +37,17 @@ class _HistoryDetailState extends State<HistoryDetailPage>
       return requestError
           ? buildExceptionIndicator("网络请求出错了！")
           : listData == null
-          ? new Center(
-        child: new CupertinoActivityIndicator(),
-      )
-          : new SmartRefresher(
-          enablePullUp: false,
-          enablePullDown: true,
-          controller: _refreshController,
-          headerBuilder: buildDefaultHeader,
-          onRefresh: (up) {
-            if (up) {
-              _pullToRefresh();
-            }
-          },
-          child: buildHistoryListView(context, listData));
+              ? new Center(
+                  child: new CupertinoActivityIndicator(),
+                )
+              : new EasyRefresh(
+                  autoLoad: true,
+                  key: easyRefreshKey,
+                  refreshHeader: buildDefaultHeader(),
+                  onRefresh: () {
+                    _pullToRefresh();
+                  },
+                  child: buildHistoryListView(context, listData));
     }
 
     return new Scaffold(
@@ -68,14 +63,16 @@ class _HistoryDetailState extends State<HistoryDetailPage>
     await getGankDayData(url).then((GankPost dailyResponse) {
       print(dailyResponse);
       setState(() {
+        requestError = false;
         listData = dailyResponse;
       });
-      requestError = false;
     }).catchError((error) {
-      requestError = true;
+      setState(() {
+        requestError = true;
+      });
     }).whenComplete(() {
-      _refreshController.sendBack(
-          true, requestError ? RefreshStatus.failed : RefreshStatus.completed);
+      if (requestError) return;
+      easyRefreshKey.currentState.callRefreshFinish();
     });
   }
 

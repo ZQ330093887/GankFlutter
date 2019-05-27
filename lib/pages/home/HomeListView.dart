@@ -10,6 +10,17 @@ Widget buildDailyListView(BuildContext context, String homeData) {
   ///如果首页item的数据为空则显示加载进度条
   if (homeData == null) {
     return buildLoadingIndicator();
+  } else if (homeData.split("<h1>") != null && homeData.split("<h1>").length > 1) {
+    //服务器奔溃以后会返回一个网页，所以这里判断一下，只要存在类似的标签，表示奔溃了
+    // <html>
+    //<head><title>404 Not Found</title></head>
+    //<body bgcolor="white">
+    //<center><h1>404 Not Found</h1></center>
+    //<hr><center>openresty</center>
+    //</body>
+    //</html>
+
+    return buildExceptionIndicator("服务器异常，修复中…");
   }
 
   Map<String, dynamic> value;

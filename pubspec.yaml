@@ -20,7 +20,7 @@ dependencies:
   flutter_webview_plugin: ^0.3.0+2
   url_launcher: ^3.0.2
   transparent_image: ^0.1.0
-  pull_to_refresh: ^1.1.6
+  flutter_easyrefresh: ^1.2.7
   cached_network_image: "^0.4.1"
   shared_preferences: ^0.4.2
   date_utils: ^0.1.0
@@ -48,20 +48,20 @@ flutter:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
   assets:
-      - images/home_green.png
-      - images/icon_home.png
-      - images/profile.png
-      - images/bg.jpg
-      - images/bg_2.jpg
-      - images/profile_2.jpg
-      - images/icon_circle.png
-      - images/icon_msg.png
-      - images/icon_sina.png
-      - images/icon_wx.png
-      - images/logo.png
-      - images/smile.png
-      - images/empty_data.png
-      - images/loading.png
+  - images/home_green.png
+  - images/icon_home.png
+  - images/profile.png
+  - images/bg.jpg
+  - images/bg_2.jpg
+  - images/profile_2.jpg
+  - images/icon_circle.png
+  - images/icon_msg.png
+  - images/icon_sina.png
+  - images/icon_wx.png
+  - images/logo.png
+  - images/smile.png
+  - images/empty_data.png
+  - images/loading.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
 
