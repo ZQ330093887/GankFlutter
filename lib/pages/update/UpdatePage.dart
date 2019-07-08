@@ -143,6 +143,10 @@ final List<Page> _allPages = <Page>[
       versionCode: "3.1.1",
       versionName: "首页banner优化，图片加载，展示提升70%,图片带缓存",
       versionTime: "2018-9-30"),
+  new Page(
+      versionCode: "3.1.2",
+      versionName: "我的页面改版，更换刷新库",
+      versionTime: "2018-9-30"),
   new Page(versionCode: "n.n", versionName: "待定", versionTime: "待定"),
 ];
 
