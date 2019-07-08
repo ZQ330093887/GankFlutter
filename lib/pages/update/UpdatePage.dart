@@ -146,7 +146,7 @@ final List<Page> _allPages = <Page>[
   new Page(
       versionCode: "3.1.2",
       versionName: "我的页面改版，更换刷新库",
-      versionTime: "2018-9-30"),
+      versionTime: "2019-1-1"),
   new Page(versionCode: "n.n", versionName: "待定", versionTime: "待定"),
 ];
 
