@@ -27,7 +27,8 @@ Widget BuildWelfareRows(context, PostData postData) {
 //                        image: postData.url,
 //                        fit: BoxFit.cover),
                     child: new CachedNetworkImage(
-                      placeholder: CupertinoActivityIndicator(),
+                      placeholder: (context, url) =>
+                          CupertinoActivityIndicator(),
                       imageUrl: postData.url,
                       fit: BoxFit.fitWidth,
                     ),

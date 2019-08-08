@@ -39,7 +39,9 @@ class _LoginPageState extends State<LoginPage> {
           WhitelistingTextInputFormatter.digitsOnly,
         ],
         onSubmitted: (text) {
-          FocusScope.of(context).reparentIfNeeded(node);
+//          FocusScope.of(context).reparentIfNeeded(node);
+          FocusScope.of(context).requestFocus(node);
+
         },
       ),
     );
@@ -65,7 +67,8 @@ class _LoginPageState extends State<LoginPage> {
         WhitelistingTextInputFormatter.digitsOnly,
       ],
       onSubmitted: (text) {
-        FocusScope.of(context).reparentIfNeeded(node);
+//        FocusScope.of(context).reparentIfNeeded(node);
+        FocusScope.of(context).requestFocus(node);
       },
     );
 

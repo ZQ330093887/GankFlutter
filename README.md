@@ -67,6 +67,16 @@
 
 官方的Demo及各个Widget的效果在安装了Flutter SDK之后在  Flutter SDK安装目录/flutter/examples下，可以自己一一尝试。
 
+## flutter （MAC）环境搭建
+    输入命令：
+
+    export PUB_HOSTED_URL=https://pub.flutter-io.cn
+    export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+    git clone -b dev https://github.com/flutter/flutter.git
+    export PATH="$PWD/flutter/bin:$PATH"
+    cd ./flutter
+    flutter doctor
+
 ## 已优化问题
 
 - 首页banner优化：提升banner加载图片的速度

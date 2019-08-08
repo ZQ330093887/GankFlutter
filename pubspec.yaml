@@ -21,7 +21,7 @@ dependencies:
   url_launcher: ^3.0.2
   transparent_image: ^0.1.0
   flutter_easyrefresh: ^1.2.7
-  cached_network_image: "^0.4.1"
+  cached_network_image: ^1.1.1
   shared_preferences: ^0.4.2
   date_utils: ^0.1.0
   intl: ^0.15.7
