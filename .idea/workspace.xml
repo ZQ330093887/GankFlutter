@@ -5,9 +5,11 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27711f5b-601b-44dd-9f56-9bf8d5a654ca" name="Default" comment="flutter SDK更新">
+    <list default="true" id="27711f5b-601b-44dd-9f56-9bf8d5a654ca" name="Default" comment="更新了列表的样式，展示更好看">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/DetailList.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/DetailList.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/history/HistoryDetailPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/history/HistoryDetailPage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/search/SearchListPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/search/SearchListPage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/update/UpdatePage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/update/UpdatePage.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,42 +24,108 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/common/Constant.dart">
+        <entry file="file://$PROJECT_DIR$/lib/pages/login/LoginPage.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/common/WelfareBuildRows.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/common/DetailList.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-777">
-              <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+            <state relative-caret-position="-1895">
               <folding>
-                <element signature="e#0#54#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/pages/history/WidgetHistoryList.dart">
+        <entry file="file://$PROJECT_DIR$/lib/pages/index/IndexDrawPage.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="115" selection-start-line="115" selection-end-line="115" selection-end-column="20" />
+            <state relative-caret-position="315">
+              <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
               <folding>
-                <element signature="e#0#54#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/pages/home/HomeBuildRows.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/pages/home/HomeListView.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="640">
+              <caret line="70" column="21" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/pages/home/HomePage.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="505">
+              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/pages/history/HistoryDetailPage.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="705">
+              <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/pages/history/HistoryPage.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="139" column="21" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/pages/detail/ArticleDetailPage.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/pages/detail/DetailListView.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/pages/detail/DetailPage.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="86" column="35" lean-forward="true" selection-start-line="86" selection-start-column="35" selection-end-line="86" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,8 +214,6 @@
         <option value="$PROJECT_DIR$/lib/pages/history/HistoryPage.dart" />
         <option value="$PROJECT_DIR$/lib/pages/home/HomeListView.dart" />
         <option value="$PROJECT_DIR$/lib/widget/Translations.dart" />
-        <option value="$PROJECT_DIR$/lib/pages/search/SearchListPage.dart" />
-        <option value="$PROJECT_DIR$/lib/pages/history/HistoryDetailPage.dart" />
         <option value="$PROJECT_DIR$/lib/utils/IndicatorUtils.dart" />
         <option value="$PROJECT_DIR$/lib/pages/detail/DetailPage.dart" />
         <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_easyrefresh-1.2.7/lib/src/header/header.dart" />
@@ -158,14 +224,16 @@
         <option value="$PROJECT_DIR$/lib/pages/mine/myInfoCard.dart" />
         <option value="$PROJECT_DIR$/lib/pages/mine/myServiceCard.dart" />
         <option value="$PROJECT_DIR$/lib/pages/mine/videoCard.dart" />
-        <option value="$PROJECT_DIR$/lib/pages/update/UpdatePage.dart" />
         <option value="$PROJECT_DIR$/lib/utils/PageRouteUtils.dart" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lib/pages/login/LoginPage.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/common/WelfareBuildRows.dart" />
         <option value="$PROJECT_DIR$/lib/pages/history/WidgetHistoryList.dart" />
         <option value="$PROJECT_DIR$/lib/common/DetailList.dart" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/lib/pages/update/UpdatePage.dart" />
+        <option value="$PROJECT_DIR$/lib/pages/search/SearchListPage.dart" />
+        <option value="$PROJECT_DIR$/lib/pages/history/HistoryDetailPage.dart" />
       </list>
     </option>
   </component>
@@ -235,158 +303,69 @@
               <item name="GankFlutter" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="detail" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GankFlutter" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="history" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
               <item name="GankFlutter" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GankFlutter" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GankFlutter" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GankFlutter" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="mine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GankFlutter" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="push" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GankFlutter" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="search" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GankFlutter" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="update" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GankFlutter" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GankFlutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Dart Packages" type="3dd79eb:DartTreeStructureProvider$1" />
-              <item name="lib" type="e6ad2126:DartTreeStructureProvider$DartSdkOrLibraryRootNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="rendering" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -417,6 +396,7 @@
     <property name="DEBUGGABLE_PROCESS" value="com.example.fluttergank" />
     <property name="DEBUGGER_ID" value="Auto" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
+    <property name="ScreenshotViewer.SavePath" value="$USER_HOME$/Desktop" />
     <property name="SearchEverywhereHistoryKey" value="_HistoryPageState&#9;null&#9;null&#10;main&#9;RUN_CONFIGURATION&#9;main.dart&#10;_NewsListState&#9;null&#9;null&#10;_HistoryDetailState&#9;null&#9;null" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
@@ -740,7 +720,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565259369936</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="更新了列表的样式，展示更好看">
+      <created>1565342317891</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1565342317891</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -754,7 +741,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49919742" visible="true" weight="0.24964234" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -767,7 +753,7 @@
       <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48211733" visible="true" weight="0.17108434" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48211733" weight="0.426506" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4914163" weight="0.4698795" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -775,8 +761,8 @@
       <window_info anchor="bottom" id="Dart Analysis" order="7" sideWeight="0.48712447" weight="0.52048194" />
       <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5178827" side_tool="true" weight="0.62650603" />
-      <window_info anchor="bottom" id="Logcat" order="10" sideWeight="0.47711015" weight="0.44457832" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.48855507" weight="0.5253012" />
+      <window_info anchor="bottom" id="Logcat" order="10" sideWeight="0.47711015" weight="0.38915664" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="11" sideWeight="0.48855507" visible="true" weight="0.5253012" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.48855507" weight="0.32891566" />
       <window_info anchor="bottom" id="Flutter Performance" order="13" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.48783976" weight="0.83253014" />
@@ -857,7 +843,8 @@
     <MESSAGE value="我的页面版本更换，刷新库更换" />
     <MESSAGE value="更新说明更新" />
     <MESSAGE value="flutter SDK更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="flutter SDK更新" />
+    <MESSAGE value="更新了列表的样式，展示更好看" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新了列表的样式，展示更好看" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -876,26 +863,6 @@
           <url>file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/pull_to_refresh-1.1.6/lib/src/smart_refresher.dart</url>
           <line>66</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/pages/search/SearchListPage.dart</url>
-          <line>107</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/pages/search/SearchListPage.dart</url>
-          <line>108</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/pages/search/SearchListPage.dart</url>
-          <line>110</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/pages/home/HomePage.dart</url>
-          <line>27</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/detail/DetailPage.dart</url>
@@ -998,251 +965,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/pages/mine/settingCard.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/detail/DetailListView.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/detail/DetailPage.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="59" column="34" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/widgets/basic.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="3750" column="2" selection-start-line="3750" selection-start-column="2" selection-end-line="3750" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/mine/myServiceCard.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding>
-            <element signature="e#6216#11623#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/painting/box_decoration.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/painting/box_border.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="563" column="8" selection-start-line="563" selection-start-column="8" selection-end-line="563" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/painting/borders.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/update/UpdatePage.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/mine/videoCard.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/material/icons.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="2301" column="29" selection-start-line="2301" selection-start-column="24" selection-end-line="2301" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/mine/myInfoCard.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="76" column="16" lean-forward="true" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/widgets/focus_manager.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-59">
-          <caret line="708" column="7" selection-start-line="708" selection-start-column="7" selection-end-line="708" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api/Api.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/cached_network_image-0.4.2/lib/cached_network_image.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6966">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/cupertino/activity_indicator.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/cached_network_image-1.1.1/lib/src/cached_image_widget.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/login/LoginPage.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="67" column="8" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/PageRouteUtils.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flutter_01.log" />
-    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/rendering/custom_layout.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3785">
-          <caret line="84" column="69" selection-start-line="84" selection-start-column="69" selection-end-line="84" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#13862#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/rendering/box.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/mine/MinePage.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/widgets/container.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5685">
-          <caret line="387" selection-start-line="387" selection-end-line="387" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/index/IndexDrawPage.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/history/HistoryDetailPage.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/history/HistoryPage.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="139" column="21" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/home/HomePage.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/cached_network_image-1.1.1/lib/src/cached_network_image_provider.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/home/HomeBuildRows.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/home/HomeListView.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="70" column="21" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/welfare/PhotoView.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1275,16 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="440" column="31" lean-forward="true" selection-start-line="440" selection-start-column="31" selection-end-line="440" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/ScreenUtils.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1344,10 +1056,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/painting/binding.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="68" column="12" lean-forward="true" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/device-2019-08-09-172203.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/device-2019-08-09-172244.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/device-2019-08-09-172312.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/device-2019-08-09-172347.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/device-2019-08-09-172428.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/device-2019-08-09-172504.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/device-2019-08-09-172814.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="97" column="7" lean-forward="true" selection-start-line="97" selection-start-column="7" selection-end-line="97" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/pages/history/WidgetHistoryList.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="115" selection-start-line="115" selection-end-line="115" selection-end-column="20" />
+        <state relative-caret-position="535">
+          <caret line="116" column="36" lean-forward="true" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/common/DetailList.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/common/WelfareBuildRows.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
@@ -1356,31 +1123,207 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/common/Constant.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        <state relative-caret-position="280">
+          <caret line="52" column="36" lean-forward="true" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/common/WelfareBuildRows.dart">
+    <entry file="file://$PROJECT_DIR$/lib/utils/TimeUtils.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="52" />
+        <state relative-caret-position="360">
+          <caret line="24" column="3" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/painting/binding.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="68" column="12" lean-forward="true" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/lib/utils/SharedPrfUtils.dart">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/common/DetailList.dart">
+    <entry file="file://$PROJECT_DIR$/lib/utils/ScreenUtils.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-777">
-          <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+        <state relative-caret-position="90">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/mine/myInfoCard.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="170" column="34" selection-start-line="170" selection-start-column="34" selection-end-line="170" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/PageRouteUtils.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="24" column="62" lean-forward="true" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/MessageDialogUtils.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/LoadingDialogUtils.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/IndicatorUtils.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/DialogUtils.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/Application.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/update/UpdatePage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/search/SearchListPage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-151">
+          <caret line="75" column="28" lean-forward="true" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/push/PushPage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-560">
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/mine/MinePage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="35" column="35" lean-forward="true" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/mine/ideaCard.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3740">
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/login/LoginPage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1895">
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/index/IndexDrawPage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/home/HomeBuildRows.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/home/HomeListView.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="70" column="21" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/home/HomePage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/history/HistoryDetailPage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/history/HistoryPage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="139" column="21" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/detail/ArticleDetailPage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/detail/DetailListView.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/detail/DetailPage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="86" column="35" lean-forward="true" selection-start-line="86" selection-start-column="35" selection-end-line="86" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>

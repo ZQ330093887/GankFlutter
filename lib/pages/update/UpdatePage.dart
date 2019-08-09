@@ -24,6 +24,7 @@ class _UpdatePageState extends State<UpdatePage> {
         ),
         body: new ListView.builder(
           itemCount: itemInfo.length,
+          // ignore: missing_return
           itemBuilder: (context, index) {
             final item = itemInfo[index];
 

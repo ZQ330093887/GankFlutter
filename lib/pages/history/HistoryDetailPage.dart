@@ -44,6 +44,7 @@ class _HistoryDetailState extends State<HistoryDetailPage>
                   autoLoad: true,
                   key: easyRefreshKey,
                   refreshHeader: buildDefaultHeader(),
+                  // ignore: missing_return
                   onRefresh: () {
                     _pullToRefresh();
                   },

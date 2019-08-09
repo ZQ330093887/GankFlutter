@@ -68,9 +68,11 @@ class _SearchListPageState extends State<SearchListPage>
                 key: easyRefreshKey,
                 refreshHeader: buildDefaultHeader(),
                 refreshFooter: buildDefaultFooter(),
+                // ignore: missing_return
                 onRefresh: () {
                   _pullToRefresh();
                 },
+                // ignore: missing_return
                 loadMore: () {
                   _loadingMore();
                 },
