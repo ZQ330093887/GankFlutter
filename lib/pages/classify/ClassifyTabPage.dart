@@ -14,13 +14,13 @@ class ClassifyTabPage {
       new ClassifyTabPage(
           text: "all",
           detailPage: new DetailPage(
-            feedType: ('all'),
+            feedType: ('All'),
             showTitle: false,
           )),
       new ClassifyTabPage(
           text: "福利",
           detailPage: new DetailPage(
-            feedType: ('福利'),
+            feedType: ('Girl'),
             showTitle: false,
           )),
       new ClassifyTabPage(
@@ -38,31 +38,19 @@ class ClassifyTabPage {
       new ClassifyTabPage(
           text: "前端",
           detailPage: new DetailPage(
-            feedType: ('前端'),
+            feedType: ('frontend'),
             showTitle: false,
           )),
       new ClassifyTabPage(
-          text: "拓展资源",
+          text: "Flutter",
           detailPage: new DetailPage(
-            feedType: ('拓展资源'),
-            showTitle: false,
-          )),
-      new ClassifyTabPage(
-          text: "瞎推荐",
-          detailPage: new DetailPage(
-            feedType: ('瞎推荐'),
+            feedType: ('Flutter'),
             showTitle: false,
           )),
       new ClassifyTabPage(
           text: "App",
           detailPage: new DetailPage(
-            feedType: ('App'),
-            showTitle: false,
-          )),
-      new ClassifyTabPage(
-          text: "休息视频",
-          detailPage: new DetailPage(
-            feedType: ('休息视频'),
+            feedType: ('app'),
             showTitle: false,
           )),
     ];

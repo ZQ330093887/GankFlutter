@@ -1,14 +1,13 @@
 import 'package:GankFlutter/common/GlobalConfig.dart';
-import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/model/CategoryResponse.dart';
 import 'package:GankFlutter/utils/PageRouteUtils.dart';
 import 'package:GankFlutter/utils/ScreenUtils.dart';
-import 'package:GankFlutter/welfare/PhotoView.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class NewsBannerView extends StatelessWidget {
-  final List<PostData> banners;
+  final List<BannerData> banners;
 
   NewsBannerView(this.banners);
 
@@ -22,7 +21,7 @@ class NewsBannerView extends StatelessWidget {
             builder: (BuildContext context) {
               return GestureDetector(
                 onTap: () {
-                  routePagerNavigator(context, new PhotoView(item: banner));
+                  routeWebView(context, banner.title, banner.url);
                 },
                 child: Container(
                     width: Screen.width,
@@ -34,8 +33,7 @@ class NewsBannerView extends StatelessWidget {
                           width: Screen.width,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: CachedNetworkImageProvider(
-                                    banner.url),
+                                image: CachedNetworkImageProvider(banner.image),
                                 fit: BoxFit.cover,
                               ),
                               borderRadius:
@@ -59,14 +57,14 @@ class NewsBannerView extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                banner.who,
+                                banner.title,
                                 style: TextStyle(
                                   color: GlobalConfig.cardBackgroundColor,
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Text(banner.desc,
+                              Text(banner.title,
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 2,
                                   style: TextStyle(

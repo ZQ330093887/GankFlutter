@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:GankFlutter/common/GlobalConfig.dart';
-import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/model/CategoryResponse.dart';
 import 'package:GankFlutter/utils/PageRouteUtils.dart';
 
 Widget ideaCard(BuildContext context, var results) {

@@ -1,4 +1,4 @@
-import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/model/CategoryResponse.dart';
 import 'package:GankFlutter/utils/PageRouteUtils.dart';
 import 'package:GankFlutter/welfare/PhotoView.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -9,10 +9,13 @@ import 'package:flutter/material.dart';
 Widget BuildWelfareRows(context, PostData postData) {
   final ThemeData theme = Theme.of(context);
   final TextStyle titleStyle =
-      theme.textTheme.headline.copyWith(color: Colors.white);
+      theme.textTheme.headline5.copyWith(color: Colors.white);
 
   return new InkWell(
-      onTap: () => routePagerNavigator(context, PhotoView(item: postData)),
+      onTap: () => {
+            routePagerNavigator(context,
+                new PhotoView(item: new BannerData(null, "美图", postData.url)))
+          },
       child: new Card(
         margin: new EdgeInsets.all(2.0),
         child: new Padding(

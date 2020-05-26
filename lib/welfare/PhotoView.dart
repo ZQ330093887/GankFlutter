@@ -1,4 +1,4 @@
-import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/model/CategoryResponse.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +7,7 @@ const double _kMinFlingVelocity = 800.0;
 class PhotoView extends StatefulWidget {
   const PhotoView({Key key, this.item}) : super(key: key);
 
-  final PostData item;
+  final BannerData item;
 
   @override
   _PhotoViewState createState() => _PhotoViewState();
@@ -85,7 +85,7 @@ class _PhotoViewState extends State<PhotoView>
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.item.desc),
+          title: Text(widget.item.title),
         ),
         body: GestureDetector(
           onTap: () {

@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:GankFlutter/api/Api.dart';
 import 'package:GankFlutter/api/http.dart';
 import 'package:GankFlutter/common/Constant.dart';
-import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/model/CategoryResponse.dart';
 import 'package:GankFlutter/utils/IndicatorUtils.dart';
 import 'package:GankFlutter/utils/SharedPrfUtils.dart';
 import 'package:flutter/cupertino.dart';
@@ -78,9 +78,10 @@ class _DetailPageState extends State<DetailPage>
   getNewsList(bool isLoadMore) async {
     String url = getUrl();
     await getGankfromNet(url).then((CategoryResponse categoryResponse) {
-      if (!categoryResponse.error) {
-        var _listData = categoryResponse.results;
+      if (categoryResponse.status == 100) {
+        var _listData = categoryResponse.data;
         print(_listData);
+        print("====================");
         if (_listData.length > 0) {
           setState(() {
             if (!isLoadMore) {
@@ -99,6 +100,7 @@ class _DetailPageState extends State<DetailPage>
       }
     }).catchError((error) {
       setState(() {
+        print("====================" + error.toString());
         requestError = true;
       });
     }).whenComplete(() {
@@ -135,7 +137,7 @@ class _DetailPageState extends State<DetailPage>
       CategoryResponse categoryResponse = CategoryResponse.fromJson(userMap);
       print("获取缓存数据成功");
       setState(() {
-        listData = categoryResponse.results;
+        listData = categoryResponse.data;
       });
     }
 
@@ -146,8 +148,10 @@ class _DetailPageState extends State<DetailPage>
   }
 
   String getUrl() {
-    var url = Api.FEED_URL;
-    url += widget.feedType + '/10/' + this.curPage.toString();
+    var url = Api.FEED_URL +
+        (widget.feedType == "Girl" ? "Girl/type/" : "GanHuo/type/");
+
+    url += widget.feedType + '/page/' + this.curPage.toString() + "/count/10";
     print("feedListUrl: $url");
     return url;
   }

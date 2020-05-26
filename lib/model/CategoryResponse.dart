@@ -1,23 +1,27 @@
-class DailyResponse {
-  List<dynamic> category;
-  bool error;
-  Map<String, dynamic> results;
+class CategoryResponse {
+  int status;
+  List<dynamic> data;
 
-  DailyResponse(this.category, this.error, this.results);
+  CategoryResponse(this.status, this.data);
 
-  DailyResponse.fromJson(Map<String, dynamic> json)
-      : error = json['error'],
-        category = json['category'],
-        results = json['results'];
+  CategoryResponse.fromJson(Map<String, dynamic> json) {
+    this.status = json['status'];
+    this.data = json['data'];
+  }
+
+  Map<String, dynamic> toJson() => {
+        'status': status,
+        'data': data,
+      };
 }
 
-class CategoryResponse {
+class HistoryResponse {
   bool error;
   List<dynamic> results;
 
-  CategoryResponse(this.error, this.results);
+  HistoryResponse(this.error, this.results);
 
-  CategoryResponse.fromJson(Map<String, dynamic> json) {
+  HistoryResponse.fromJson(Map<String, dynamic> json) {
     this.error = json['error'];
     this.results = json['results'];
   }
@@ -38,12 +42,13 @@ class PostData {
   String type;
   String url;
   bool used;
-  String who;
+  String author;
   bool isTitle = false;
   String category;
+  int stars;
 
   PostData(this._id, this.createdAt, this.desc, this.images, this.publishedAt,
-      this.source, this.type, this.url, this.used, this.who);
+      this.source, this.type, this.url, this.used, this.author);
 
   PostData.title(this.isTitle, this.category);
 
@@ -61,7 +66,8 @@ class PostData {
     this.source = json['source'];
     this.type = json['type'];
     this.url = json['url'];
-    this.who = json['who'] ?? "github";
+    this.stars = json['stars'];
+    this.author = json['author'] ?? "github";
   }
 
   PostData.fromJson(Map<String, dynamic> json) {
@@ -73,8 +79,9 @@ class PostData {
     this.source = json['source'];
     this.type = json['type'];
     this.url = json['url'];
+    this.stars = json['stars'];
     this.used = json['used'];
-    this.who = json['who'];
+    this.author = json['author'];
   }
 
   Map<String, dynamic> toJson() => {
@@ -87,56 +94,23 @@ class PostData {
         'type': type,
         'url': url,
         'used': used,
-        'who': who,
+        'author': author,
         'category': category,
       };
 }
 
-class SearchResponse {
-  int count;
-  bool error;
-  List<dynamic> results;
-
-  SearchResponse(this.count, this.error, this.results);
-
-  SearchResponse.fromJson(Map<String, dynamic> json) {
-    this.count = json['count'];
-    this.error = json['error'];
-    this.results = json['results'];
-  }
-}
-
-class SearchData {
-  String ganhuo_id;
-  String desc;
-  String publishedAt;
-  String readability;
-  String type;
+class BannerData {
+  String image;
+  String title;
   String url;
-  String who;
 
-  SearchData(this.ganhuo_id, this.desc, this.publishedAt, this.readability,
-      this.type, this.url, this.who);
+  BannerData(this.image, this.title, this.url);
 
-  SearchData.fromJson(Map<String, dynamic> json) {
-    this.ganhuo_id = json['ganhuo_id'];
-    this.desc = json['desc'];
-    this.publishedAt = json['publishedAt'];
-    this.readability = json['readability'];
-    this.type = json['type'];
+  BannerData.fromJson(Map<String, dynamic> json) {
+    this.image = json['image'];
+    this.title = json['title'];
     this.url = json['url'];
-    this.who = json['who'];
   }
-
-  Map<String, dynamic> toJson() => {
-        'ganhuo_id': ganhuo_id,
-        'desc': desc,
-        'publishedAt': publishedAt,
-        'readability': readability,
-        'type': type,
-        'url': url,
-        'who': who,
-      };
 }
 
 class GankPost {

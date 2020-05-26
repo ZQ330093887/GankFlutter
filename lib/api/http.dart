@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:async';
-import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/model/CategoryResponse.dart';
 
 import 'dart:convert';
 
@@ -25,19 +25,17 @@ class HttpExt {
 
   Future<CategoryResponse> getGankfromNet(String url) async {
     final responseStr = await getRequest(url);
-    return toGankList(responseStr);
+    return CategoryResponse.fromJson(jsonDecode(responseStr));
   }
 
-  CategoryResponse toGankList(String responseStr) {
-    return CategoryResponse.fromJson(jsonDecode(responseStr));
+
+  Future<HistoryResponse> getHistoryRequest(String url) async {
+    final responseStr = await getRequest(url);
+    return HistoryResponse.fromJson(jsonDecode(responseStr));
   }
 
   Future<GankPost> getGankDayData(String url) async {
     final responseStr = await getRequest(url);
-    return toGankDayList(responseStr);
-  }
-
-  GankPost toGankDayList(String responseStr) {
     return GankPost.fromJson(jsonDecode(responseStr));
   }
 

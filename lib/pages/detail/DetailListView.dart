@@ -1,30 +1,12 @@
-import 'dart:convert';
-
 import 'package:GankFlutter/common/Constant.dart';
-import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/model/CategoryResponse.dart';
 import 'package:GankFlutter/pages/history/WidgetHistoryList.dart';
 import 'package:GankFlutter/pages/history/WidgetHistoryTitle.dart';
+import 'package:GankFlutter/utils/PageRouteUtils.dart';
+import 'package:GankFlutter/welfare/PhotoView.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:GankFlutter/welfare/PhotoView.dart';
-import 'package:GankFlutter/utils/PageRouteUtils.dart';
-
-Widget buildCategoryListView(BuildContext context, AsyncSnapshot snapshot) {
-  CategoryResponse categoryResponse =
-  CategoryResponse.fromJson(jsonDecode(snapshot.data));
-  List results = categoryResponse.results;
-
-  if (categoryResponse.error) {
-    return buildExceptionIndicator("网络请求错误");
-  } else {
-    if (categoryResponse.results.length == 0) {
-      return buildExceptionIndicator("这里空空的什么都没有呢...");
-    } else {
-      return buildListViewBuilder(context, results);
-    }
-  }
-}
 
 Widget buildListViewBuilder(context, List results) {
   print(results);
@@ -71,17 +53,7 @@ Widget buildHistoryListView(BuildContext context, GankPost postData) {
 GestureDetector _buildImageBanner(BuildContext context, GankPost postData) {
   return GestureDetector(
     onTap: () {
-      PostData p = new PostData(
-          "",
-          "",
-          "美图",
-          null,
-          "",
-          "",
-          "",
-          postData.girlImage,
-          false,
-          "");
+      BannerData p = new BannerData(null, "美图", postData.girlImage);
       routePagerNavigator(context, new PhotoView(item: p));
     },
     child: CachedNetworkImage(

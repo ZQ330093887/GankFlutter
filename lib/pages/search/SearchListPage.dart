@@ -5,7 +5,7 @@ import 'package:GankFlutter/common/GlobalConfig.dart';
 import 'package:GankFlutter/api/Api.dart';
 import 'package:GankFlutter/api/http.dart';
 import 'package:GankFlutter/common/Constant.dart';
-import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/model/CategoryResponse.dart';
 import 'package:GankFlutter/pages/detail/DetailListView.dart';
 import 'package:GankFlutter/utils/IndicatorUtils.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
@@ -96,10 +96,10 @@ class _SearchListPageState extends State<SearchListPage>
   //网络请求
   searchArticle(bool isLoadMore) {
     var url = Api.SEARCH_URL;
-    url += 'listview/category/' +
-        widget.id +
-        '/count/10/page/' +
-        this.curPage.toString();
+    url += widget.id +
+        '/category/All/type/All/page/' +
+        this.curPage.toString() +
+        '/count/10';
     print("feedListUrl: $url");
 
     HttpExt.get(url, (data) {
@@ -113,8 +113,8 @@ class _SearchListPageState extends State<SearchListPage>
       if (data != null) {
         CategoryResponse categoryResponse =
             CategoryResponse.fromJson(jsonDecode(data));
-        if (!categoryResponse.error) {
-          var _listData = categoryResponse.results;
+        if (categoryResponse.status == 100) {
+          var _listData = categoryResponse.data;
           print(_listData);
           if (_listData.length > 0) {
             setState(() {

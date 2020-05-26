@@ -1,6 +1,6 @@
 import 'package:GankFlutter/common/GlobalConfig.dart';
 import 'package:GankFlutter/common/WebViewPage.dart';
-import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/model/CategoryResponse.dart';
 import 'package:GankFlutter/utils/PageRouteUtils.dart';
 import 'package:GankFlutter/utils/TimeUtils.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,6 +11,7 @@ import 'package:GankFlutter/utils/ScreenUtils.dart';
 Widget buildDetailListRow(context, PostData postData) {
   return new InkWell(
       onTap: () {
+        print("------------111----------"+postData.url);
         routePagerNavigator(context, WebViewPage(postData.toJson()));
       },
       child: new Card(
@@ -57,7 +58,7 @@ Widget buildDetailListRow(context, PostData postData) {
                         ),
                       ),
                       new Text(
-                        postData.source.toString(),
+                        formatDateStr(postData.publishedAt.toString()),
                         style:
                             new TextStyle(fontSize: 12.0, color: Colors.grey),
                       ),
@@ -88,7 +89,7 @@ Widget buildDetailListRow(context, PostData postData) {
                         child: new Container(
                           margin: new EdgeInsets.fromLTRB(8.0, 2.0, 8.0, 2.0),
                           child: new Text(
-                            postData.who.toString(),
+                            postData.author.toString(),
                             style: new TextStyle(
                                 fontSize: 12.0, color: Color(0xFF00BFA5)),
                           ),
@@ -102,7 +103,7 @@ Widget buildDetailListRow(context, PostData postData) {
                           child: new Container(
                             margin: new EdgeInsets.fromLTRB(8.0, 2.0, 8.0, 2.0),
                             child: new Text(
-                              formatDateStr(postData.publishedAt.toString()),
+                             "点赞👍"+ postData.stars.toString()+"颗🌟",
                               style: new TextStyle(
                                   fontSize: 12.0, color: Colors.amber),
                             ),

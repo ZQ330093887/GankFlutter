@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:GankFlutter/api/Api.dart';
 import 'package:GankFlutter/api/http.dart';
 import 'package:GankFlutter/common/Constant.dart';
-import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/model/CategoryResponse.dart';
 import 'package:GankFlutter/pages/detail/DetailListView.dart';
 import 'package:GankFlutter/utils/IndicatorUtils.dart';
 import 'package:flutter/cupertino.dart';

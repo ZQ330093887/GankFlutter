@@ -1,4 +1,4 @@
-import 'package:GankFlutter/model/DailyResponse.dart';
+import 'package:GankFlutter/model/CategoryResponse.dart';
 import 'package:GankFlutter/utils/TimeUtils.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -71,7 +71,7 @@ class _WidgetHistoryState extends State<WidgetHistoryList> {
                         child: SizedBox(
                             width: 75,
                             child: Text(
-                              widget.gankItem.who,
+                              widget.gankItem.author,
                               maxLines: 1,
                               style: Theme.of(context).textTheme.body2,
                               overflow: TextOverflow.ellipsis,
@@ -107,9 +107,8 @@ class _WidgetHistoryState extends State<WidgetHistoryList> {
       var imageUrl = widget.gankItem.images[0];
       contentWidgets.add(GestureDetector(
         onTap: () {
-          PostData p = new PostData(
-              "", "", "缩略图", null, "", "", "", imageUrl, false, "");
-          routePagerNavigator(context, new PhotoView(item: p));
+          routePagerNavigator(context,
+              new PhotoView(item: new BannerData(null, "缩略图", imageUrl)));
         },
         child: Container(
           margin: EdgeInsets.only(right: 16, top: 20, bottom: 20),
